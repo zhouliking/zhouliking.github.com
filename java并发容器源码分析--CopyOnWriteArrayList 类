@@ -2,8 +2,8 @@ JDK5中添加了新的concurrent包，其中包含了很多并发容器，这些
 
   一、CopyOnWriteArrayList/CopyOnWriteArraySet
       JDK中并没有提供CopyOnWriteMap，我们可以参考CopyOnWriteArrayList来实现一个
-  二、Queue
-  三、Map
+  二、BlockingQueue
+  三、ConcurrentHashMap
   
  一、CopyOnWriteArrayList 类
     CopyOnWrite容器即写时复制的容器.当我们往一个容器添加元素的时候，不直接往当前容器添加，而是先将当前容器进行Copy，

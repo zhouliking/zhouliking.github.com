@@ -1,3 +1,4 @@
+Content：
   一、CopyOnWriteArrayList/CopyOnWriteArraySet
       JDK中并没有提供CopyOnWriteMap，我们可以参考CopyOnWriteArrayList来实现一个
   二、BlockingQueue
@@ -38,4 +39,79 @@
           但是对于remove操作，可能需要从中间删除一个节点，这就需要将要删除节点的前面所有节点整个复制一遍，
           最后一个节点指向要删除结点的下一个结点。为了确保读操作能够看到最新的值，将value设置成volatile，这避免了加锁。
           
-    修改(需要加锁)：
+    修改,添加(需要加锁)：
+        但并不一定有锁争用，原因在于ConcurrentHashMap将缓存的变量分到多个Segment，每个Segment上有一个锁，
+        只要多个线程访问的不是一个Segment就没有锁争用，就没有堵塞，各线程用各自的锁。
+        
+        ConcurrentHashMap缺省：情况下生成16个Segment，也就是允许16个线程并发的更新而尽量没有锁争用。
+              public V put(K key, V value) {
+                  return putVal(key, value, false);
+              }
+              
+              final V putVal(K key, V value, boolean onlyIfAbsent) {
+                  //不允许有空值，空key；因此，若需要存空value或key，只能用Collections包装的HashMap
+                  if (key == null || value == null) throw new NullPointerException();
+                  int hash = spread(key.hashCode());
+                  int binCount = 0;
+                  for (Node<K,V>[] tab = table;;) {
+                      Node<K,V> f; int n, i, fh;
+                      if (tab == null || (n = tab.length) == 0)
+                          tab = initTable();
+                      else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) {
+                          if (casTabAt(tab, i, null,
+                                       new Node<K,V>(hash, key, value, null)))
+                              break;                   // no lock when adding to empty bin
+                      }
+                      else if ((fh = f.hash) == MOVED)
+                          tab = helpTransfer(tab, f);
+                      else {
+                          V oldVal = null;
+                          synchronized (f) {
+                             ....
+                          }
+                          if (binCount != 0) {
+                              if (binCount >= TREEIFY_THRESHOLD)
+                                  treeifyBin(tab, i);
+                              if (oldVal != null)
+                                  return oldVal;
+                              break;
+                          }
+                      }
+                  }
+                  addCount(1L, binCount);
+                  return null;
+              }
+              
+      size()操作：尽量避免对所有的Segment都加锁
+              final long sumCount() {
+                  CounterCell[] as = counterCells; 
+                  CounterCell a;
+                  long sum = baseCount;
+                  if (as != null) {
+                      for (int i = 0; i < as.length; ++i) {
+                          if ((a = as[i]) != null)
+                              sum += a.value;
+                      }
+                  }
+                  return sum;
+              } 
+              
+     弱一致性的迭代器：
+        允许一边更新、一边遍历，在Iterator对象遍历的时候，ConcurrentHashMap也可以进行remove,put操作，
+        且遍历的数据会随着remove,put操作产出变化。
+        
+          以下代码不会抛出异常：java.util.ConcurrentModificationException
+          		ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
+          		map.put(1, "a");
+          		map.put(2, "b");
+          		map.put(3, "c");
+          		map.put(4, "d");
+          		
+          		Iterator<Integer> it = map.keySet().iterator();
+          		while(it.hasNext()){
+          			Integer t = it.next();
+          			if(t== 1){
+          			   map.remove(t);
+          			}
+          			System.out.println(t);
+          		}

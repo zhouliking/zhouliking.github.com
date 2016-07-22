@@ -1,3 +1,7 @@
+  一、CopyOnWriteArrayList/CopyOnWriteArraySet
+      JDK中并没有提供CopyOnWriteMap，我们可以参考CopyOnWriteArrayList来实现一个
+  二、BlockingQueue
+  三、ConcurrentHashMap
 
 三、ConcurrentHashMap
   1.与同步容器HashTable比较
@@ -33,3 +37,5 @@
           因为这需要修改next 引用值，所有的节点的修改只能从头部开始。对于put操作，可以一律添加到Hash链的头部。
           但是对于remove操作，可能需要从中间删除一个节点，这就需要将要删除节点的前面所有节点整个复制一遍，
           最后一个节点指向要删除结点的下一个结点。为了确保读操作能够看到最新的值，将value设置成volatile，这避免了加锁。
+          
+    修改(需要加锁)：

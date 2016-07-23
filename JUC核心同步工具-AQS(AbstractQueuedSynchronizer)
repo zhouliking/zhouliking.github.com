@@ -14,6 +14,7 @@ AbstractQueuedSynchronizer类：java.util.concurrent的基础。J.U.C中宣传�
         // ....
       }
       
+      所有的同步均委托给Sync完成：
       /** Synchronizer providing all implementation mechanics */
       private final Sync sync;
-  
+      注：有些同步类，像 CyclicBarrier内部，用的ReentrantLock，所以也是委托给AQS完成同步的

@@ -1,2 +1,2 @@
-# zlblog.github.io
-ZL的博客
+# This is my Bolg.
+Blog's Homepage: https://zlresource.github.io

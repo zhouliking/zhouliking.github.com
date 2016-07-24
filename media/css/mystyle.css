@@ -1,0 +1,276 @@
+@font-face {
+    font-family: 'Cuprum';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/media/font/Cuprum-Regular.ttf') format('truetype');
+}
+
+/*@font-face {
+    font-family: 'WenQuanYi-Micro-Hei';
+    src: url('/media/font/WenQuanYi-Micro-Hei.ttf') format('truetype');
+}*/
+
+/*页面格式*/
+
+body {
+    font-family: "Cuprum", "Microsoft Yahei","WenQuanYi Zen Hei UI", Helvetica, Arial, sans-serif;
+    /*font-family: "Helvetica Neue", "Helvetica", "Microsoft YaHei UI", "WenQuanYi Micro Hei", Arial, sans-serif;*/
+    background-color: #fdfdfd;
+    color: #333;
+    line-height: 22px;
+    letter-spacing: 1px;
+    font-style: normal;
+    /*字间距*/
+}
+
+.subtlepattern_white_wall {
+    background-image: url("/assets/blog/concrete_wall.png")
+}
+
+p {
+    margin: 0px 0px 20px;
+}
+
+h1 {
+    margin: 20px 0px 20px;
+    font-size: 26px;
+}
+
+h2 {
+    margin: 35px 0px 20px;
+    font-size: 24px;
+}
+
+.list-margin {
+    margin: 15px 0px 10px;
+}
+
+h3 {
+    font-family: "Cuprum", "SimHei","Microsoft Yahei",  "WenQuanYi Micro Hei";
+    margin: 20px 0px;
+    font-size: 22px;
+    color: #D12299;
+}
+
+h4 {
+    font-family: "Cuprum","SimHei","Microsoft Yahei";
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 1ex;
+    border-left-style: solid;
+    border-color: #66CC00;
+}
+
+h5,
+h6 {
+    font-size: 16px;
+    background: rgba(102, 128, 153, 0.05);
+}
+
+h1,
+h2,
+h5,
+h6 {
+    /*color: #222;*/
+    font-weight: 500;
+    font-family: "Cuprum","Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+}
+
+
+/* 文章页面 */
+
+div#post-title {
+    margin: 18px 0;
+    font-size: 28px;
+    border-left: 6px solid #ccc;
+    padding-left: 12px;
+}
+
+div#post-meta {
+    color: #828282;
+    padding: 6px 0;
+}
+
+
+/* 表格样式 */
+
+table {
+    font-family: "Microsoft YaHei UI";
+    font-size: 11px;
+    color: #333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 10px auto;
+}
+
+table th {
+    vertical-align: middle;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+
+table td {
+    border-width: 1px;
+    /*padding: 8px;*/
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+
+p img {
+    max-width: 80%;
+    clear: both;
+    display: block;
+    margin: auto;
+}
+
+hr {
+    border-width: 0px 0px 1px;
+    color: #cfcfcf;
+    border-style: none none dashed;
+    border-color: -moz-use-text-color -moz-use-text-color #CFCFCF;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    margin: 15px 0px;
+}
+
+
+/*链接*/
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E7350F;
+    /*border-bottom: 1px dashed #E7350F;*/
+    text-decoration: none;
+}
+
+a:active {
+    position: relative;
+    /*top: 1px;*/
+    text-decoration: none;
+}
+
+
+/*blockquote*/
+
+blockquote {
+    border-color: #D6DBDF;
+    background: rgba(102, 128, 153, 0.05) none repeat scroll 0px 0px;
+    padding: 10px 5px;
+    border-left-style: solid;
+    font-size: 100%;
+    width: 98%;
+    margin: 0px 0px 20px;
+    font-style: normal;
+}
+
+blockquote p {
+    margin-bottom: 0px;
+    font-size: 100%;
+    font-weight: 300;
+    line-height: 25px;
+    padding-left: 5px;
+    text-indent: 0em !important;
+}
+
+blockquote ol,
+blockquote ul {
+    margin-left: 15px;
+}
+
+
+/*Reference格式*/
+
+.footnotes ol li p {
+    margin: 5px;
+}
+
+.footnotes ol li{
+    font-family: "Cuprum", "SimHei","Microsoft Yahei",  "WenQuanYi Micro Hei";
+    font-weight: 400;
+}
+
+.noborder {
+    border-width: 0px;
+    background-color: #fdfdfd;
+}
+
+/*个性签名*/
+.sign {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    line-height: 1.6em;
+    background: transparent url("http://www.dut.pub/static/img/sigline.gif") no-repeat scroll 0px 0px;
+}
+
+ul li{
+    margin:10px 0px 10px 5px;
+
+}
+
+.inline_list{
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+
+/*index 页面*/
+
+.archive-list .archive-date {
+    width: 4em;
+    display: inline-block
+}
+
+/*个性化*/
+
+.first {
+    clear: both;
+    margin: 10px 0;
+    padding: 6px 20px;
+    text-align: left;
+    color: white;
+    border-radius: 4px;
+    background: #59C3E4;
+}
+
+
+#backtop a { /* back to top button */
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    width:50px;
+    height: 50px;
+    position: fixed;
+    bottom: 20px; /* 小按钮到浏览器底边的距离 */
+    right: 100px; /* 小按钮到浏览器右边框的距离 */
+    color: rgb(64,120,192); /* 小按钮中文字的颜色 */
+    z-index: 1000;
+    background: #fff; /* 小按钮底色 */
+    padding: auto; /* 小按钮中文字到按钮边缘的距离 */
+    border-radius: 50px; /* 小按钮圆角的弯曲程度（半径）*/
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    font-weight: bold; /* 小按钮中文字的粗细 */
+    text-decoration: none !important;
+    box-shadow:0 1px 2px rgba(0,0,0,.15), 0 1px 0 #ffffff inset;
+}
+
+#backtop a:hover { /* 小按钮上有鼠标悬停时 */
+    background: rgba(64,120,192,0.8); /* 小按钮的底色 */
+    color: #fff; /* 文字颜色 */
+}

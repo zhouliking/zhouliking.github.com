@@ -1,0 +1,177 @@
+/* Pretty printing styles. Used with prettify.js.
+ *
+ * This version is slight modified based on the original version.
+ *
+ * Name:  Stanley Ng
+ * Email:   stanleyhlng@googlegroups.com
+ * 
+ * Reference:
+ * http://code.google.com/p/google-code-prettify/source/browse/trunk/src/prettify.css
+ */
+
+.pln {
+  color: #111111;
+}
+
+@media screen {
+  .str {
+    color: #739200;
+  }
+
+  .kwd {
+    color: #739200;
+  }
+
+  .com {
+    color: #999999;
+  }
+
+  .typ {
+    color: #ff0055;
+  }
+
+  .lit {
+    color: #538192;
+  }
+
+  .pun {
+    color: #111111;
+  }
+
+  .opn {
+    color: #111111;
+  }
+
+  .clo {
+    color: #111111;
+  }
+
+  .tag {
+    color: #111111;
+  }
+
+  .atn {
+    color: #739200;
+  }
+
+  .atv {
+    color: #ff0055;
+  }
+
+  .dec {
+    color: #111111;
+  }
+
+  .var {
+    color: #111111;
+  }
+
+  .fun {
+    color: #538192;
+  }
+}
+@media print, projection {
+  .str {
+    color: #006600;
+  }
+
+  .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+
+  .com {
+    color: #600;
+    font-style: italic;
+  }
+
+  .typ {
+    color: #404;
+    font-weight: bold;
+  }
+
+  .lit {
+    color: #004444;
+  }
+
+  .pun, .opn, .clo {
+    color: #444400;
+  }
+
+  .tag {
+    color: #006;
+    font-weight: bold;
+  }
+
+  .atn {
+    color: #440044;
+  }
+
+  .atv {
+    color: #006600;
+  }
+}
+
+
+/* Put a border around prettyprinted code snippets. */
+
+pre.prettyprint {
+    background-color: rgba(102, 128, 153, 0.05);
+    padding: 10px;
+    /*border: 1px solid #E1E1E8;*/
+    width: 95%;
+    margin: 0px auto 10px;
+    font-family: "Consolas", "SimHei","Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    font-size: 14px !important;
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+/*pre.prettyprint.linenums {
+    box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset;
+}*/
+
+
+/* Specify class=linenums on a pre to get line numbering */
+
+pre.prettyprint ol li {
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 3px solid #6CE26C;
+}
+
+
+ol.linenums {
+    color: #1E347B;
+    margin: 0 0 0 20px;
+}
+
+ol.linenums li {
+    color: #BEBEC5;
+    line-height: 20px;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+    list-style-type: normal;
+}
+
+
+/* Alternate shading for lines */
+
+/*li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+    background: #eee;
+}
+*/

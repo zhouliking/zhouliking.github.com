@@ -6,16 +6,16 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Charles's Homepage
-email: charlesxiao2030@outlook.com
+title: ZhouLi's Homepage
+email: uestczhouli@163.com
 description: > # this means to ignore newlines until "baseurl:"
-  日拱一卒
+只进不退
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: charles
-github_username:  charleshm
+url: "http://zlresource.github.io" # the base hostname & protocol for your site
+twitter_username: 
+github_username:  github.com/zlresource
 permalink: /:year/:month/:title/
-timezone: Asia/Shanghai
+timezone: Asia/Beijing
 
 # Build settings
 markdown: kramdown

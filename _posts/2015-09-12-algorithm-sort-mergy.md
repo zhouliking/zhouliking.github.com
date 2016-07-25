@@ -8,8 +8,11 @@ categories: JavaScript
 7种常见算法实现与分析（归并排序）
 
 ---
-- 目录
+
+* content
 {:toc}
+
+### 方法1
 
 ```java
 /**

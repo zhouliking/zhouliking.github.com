@@ -1,0 +1,107 @@
+[
+{
+	"src": "../../assets/demo/2048.jpg",
+	"height": 522,
+	"width": 520,
+	"des": "2048小游戏，通过JavaScript和jQuery两种方法来写的。",
+	"url": "http://limingyang2012.github.io/2048/js%E7%89%88%E6%9C%AC/index.html",
+	"code": "https://github.com/limingyang2012/2048"
+},
+
+{
+	"src": "../../assets/demo/lunbotu.jpg",
+	"height": 47,
+	"width": 220,
+	"des": "一个简单的轮播图，一定时间会自动播放，同时点击左右按钮也会切换。",
+	"url": "http://limingyang2012.github.io/baidu_ife_task/spring_task0002/task0002_3.html",
+	"code": "https://github.com/limingyang2012/baidu_ife_task/tree/master/spring_task0002"
+},
+{
+	"src": "../../assets/demo/todo.jpg",
+	"height": 125,
+	"width": 220,
+	"des": "百度ife练习题第四题，做一个任务管理web-app，实现了基本功能。",
+	"url": "http://limingyang2012.github.io/baidu_ife_task/spring_task0004/",
+	"code": "https://github.com/limingyang2012/baidu_ife_task"
+},
+{
+	"src": "../../assets/demo/blog.jpg",
+	"height": 401,
+	"width": 220,
+	"des": "本博客，通过jekyll创建博客，实现博客基本功能。",
+	"url": "http://limingyang2012.github.io/2048/js%E7%89%88%E6%9C%AC/index.html",
+	"code": "https://github.com/limingyang2012/2048"
+},
+{
+	"src": "../../assets/demo/waterfall.jpg",
+	"height": 182,
+	"width": 220,
+	"des": "实现了一个简单的瀑布流布局，使用javascript和jQuery分别实现。",
+	"url": "http://limingyang2012.github.io/waterfall/javascript%E7%89%88%E6%9C%AC/",
+	"code": "https://github.com/limingyang2012/waterfall"
+},
+{
+	"src": "../../assets/demo/daojishi.jpg",
+	"height": 104,
+	"width": 220,
+	"des": "一个简单的倒计时功能，输入特定时间计算出距离当前时刻的小时数。",
+	"url": "http://limingyang2012.github.io/baidu_ife_task/spring_task0002/task0002_2.html",
+	"code": "https://github.com/limingyang2012/baidu_ife_task/tree/master/spring_task0002"
+},
+{
+	"src": "../../assets/demo/drag.jpg",
+	"height": 138,
+	"width": 220,
+	"des": "拖拽交互应用,通过鼠标可以实现两个父容器中的元素的移动，并且两个容器之间可以交换。",
+	"url": "http://limingyang2012.github.io/baidu_ife_task/spring_task0002/task0002_5.html",
+	"code": "https://github.com/limingyang2012/baidu_ife_task/tree/master/spring_task0002"
+},
+{
+	"src": "../../assets/demo/hobby.jpg",
+	"height": 164,
+	"width": 220,
+	"des": "判断兴趣爱好，输入框中用来输入用户的兴趣爱好。",
+	"url": "http://limingyang2012.github.io/baidu_ife_task/spring_task0002/task0002_1.html",
+	"code": "https://github.com/limingyang2012/baidu_ife_task/tree/master/spring_task0002"
+},
+{
+	"src": "../../assets/demo/inputtip.jpg",
+	"height": 200,
+	"width": 220,
+	"des": "输入提示框，实现一个类似百度搜索框的输入提示的功能。",
+	"url": "http://limingyang2012.github.io/baidu_ife_task/spring_task0002/task0002_4.html",
+	"code": "https://github.com/limingyang2012/baidu_ife_task/tree/master/spring_task0002"
+},
+{
+	"src": "../../assets/demo/qiqiaoban.jpg",
+	"height": 219,
+	"width": 220,
+	"des": "通过canvas实现一个简单的七巧板。",
+	"url": "http://limingyang2012.github.io/learn-canvas/tangram/",
+	"code": "https://github.com/limingyang2012/learn-canvas/blob/master/tangram/index.html"
+},
+{
+	"src": "../../assets/demo/tetris.jpg",
+	"height": 405,
+	"width": 265,
+	"des": "通过canvas实现一个简单俄罗斯方块小游戏,使用了canvas，requre.js，sass等技术",
+	"url": "http://limingyang2012.github.io/tetris/",
+	"code": "https://github.com/limingyang2012/tetris/"
+},
+{
+	"src": "../../assets/demo/inverter.jpg",
+	"height": 262,
+	"width": 240,
+	"des": "简单的色块翻转游戏，每个方块一面橙色，一面蓝色。点击一个方块，这个方块以及其四周的方块颜色会发生变换。将所有方块都变换成蓝色你就赢了",
+	"url": "http://limingyang2012.github.io/inverter/",
+	"code": "https://github.com/limingyang2012/inverter"
+},
+{
+	"src": "../../assets/demo/swipe.jpg",
+	"height": 411,
+	"width": 331,
+	"des": "一个基于zepto的手机端轮播图插件，可以进行轮播设置，可以进行滑动操作",
+	"url": "https://github.com/limingyang2012/zepto.swipe",
+	"code": "https://github.com/limingyang2012/zepto.swipe/swipe"
+}
+]

@@ -1,0 +1,18 @@
+{
+  "name": "limingyang2012.github.io",
+  "version": "1.0.0",
+  "description": "LMY-HOME",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/limingyang2012/limingyang2012.github.io.git"
+  },
+  "author": "limingyang2012 (limingyang2012@zju.edu.cn)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/limingyang2012/limingyang2012.github.io/issues"
+  },
+  "homepage": "https://github.com/limingyang2012/limingyang2012.github.io",
+}

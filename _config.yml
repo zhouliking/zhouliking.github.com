@@ -1,6 +1,6 @@
 # Site settings
 title: 'LMY-HOME'  # Your Title
-tagline: '柔弱、无欲，顺乎自然，但却具有强大的生命力'  # A brief tagline for your site
+tagline: 'Up! Up! Up!'  # A brief tagline for your site
 sidebar_image: /images/cover.jpg
 
 encoding: UTF-8
@@ -14,10 +14,10 @@ baseurl: ""
 
 
 # Site settings
-name:           limingyang2012
-email:          limingyang2012@zju.edu.cn
-uri:            limingyang2012.github.io
-github:         limingyang2012
-twitter:        limingyang2012
-facebook:       limingyang2012
-linkedin:       limingyang2012
+name:           zhouli
+email:          uestczhouli@163.com
+uri:            zlresource.github.io
+github:         zlresource
+twitter:        
+facebook:       
+linkedin:       

@@ -1,8 +1,8 @@
-# Go To My Blog 
+# Go To My Blog (http://zlresource.github.io/)
 
 ###About ME
 
-blog：[zlresource](http://zlresource.github.io/)
+Name：ZHOULI
 
 E-Mail：[uestczhouli](http://weibo.com/zhouli)
 

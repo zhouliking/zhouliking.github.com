@@ -1,8 +1,8 @@
-﻿---
+---
 layout: post
-title: "AAAA"
-date: 2015-09-12  13:00:00
-categories: algorithm
+title:  "数组常见去重方法"
+date:  2016-03-02
+categories: JavaScript
 ---
 
 7种常见算法实现与分析（归并排序）

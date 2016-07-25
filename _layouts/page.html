@@ -1,30 +1,12 @@
 ---
 layout: default
 ---
-<div id="container">
-    <div class="content">
-        <div class="page">
-            {{ content }}
-                   
-        </div>       
-        
-    </div>
-</div>
 
+<article class="page">
 
+  <h1>{{ page.title }}</h1>
 
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    var duoshuoQuery = {short_name:"limingyang2012"};
-        (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-            || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-</script>
-<!-- 多说公共JS代码 end -->
-
-
+  <div class="entry">
+    {{ content }}
+  </div>
+</article>

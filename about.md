@@ -4,39 +4,52 @@ title: About
 permalink: /about/
 ---
 
-华科渣硕一枚，目前鹅厂实习ing...
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet urna eu dolor placerat varius. Vivamus eros augue, consequat id scelerisque nec, fringilla in est. Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet urna eu dolor placerat varius. Vivamus eros augue, consequat id scelerisque nec, fringilla in est. Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.  
 
-----------
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet urna eu dolor placerat varius. Vivamus eros augue, consequat id scelerisque nec, fringilla in est. Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula. 
 
-#### 关注领域
-机器学习，推荐系统，计算广告
+Sed faucibus felis purus, sed convallis leo dictum vehicula.
 
-----------
+## Education
 
-#### 资料推荐
-- [机器学习那些事](http://www.valleytalk.org/wp-content/uploads/2012/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%82%A3%E4%BA%9B%E4%BA%8B.pdf)
-- [逻辑回归-从入门到精通](http://www.tianyancha.com/research/LR_intro.pdf)
-- [个性化推荐十大挑战](http://blog.sciencenet.cn/blog-3075-588779.html#adtag=share)
+* ABC degree from XYZ University.
+* ABC degree from XYZ University.
+* ABC degree from XYZ University.
 
-----------
+## Roles
 
-#### 必读论文
-- [Learning from Imbalanced Data](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5128907)
-- [Discretization: An Enabling Technique](http://sci2s.ugr.es/keel/pdf/algorithm/articulo/liu1-2.pdf)
+Founder, ABC Organisation
 
-----------
+## Skills
 
-#### 网站推荐
-- [InfoQ](http://www.infoq.com/cn/news/2015/12/Algorithm-case-10)
-- [好东西论坛](http://forum.memect.com/)
-- [美团机器学习团队](http://tech.meituan.com/deep-understanding-of-ffm-principles-and-practices.html)
-- [世纪佳缘总监-吴金龙博客](http://breezedeus.github.io/)
-- [腾讯广点通团队（rickjin）](http://www.flickering.cn/)
-- [计算广告语机器学习](http://www.52caml.com/head_first_ml/ml-chapter6-boosting-family/)
-- [数据科学中的R和Python](http://xccds1977.blogspot.com/p/blog-page.html)
+* **Skill 1** - `Skill` / `Skill` / `Skill` / `Skill`
+* **Skill 2** - `Skill` / `Skill` / `Skill` / `Skill` / `Skill` / `Skill` / `Skill`
+* **Skill 3** - `Skill` / `Skill` / `Skill`
+* **Skill 4** - `Skill` / `Skill` / `Skill` 
+* **Skill 5** - `Skill`
+* **Skill 6** - `Skill` / `Skill` 
+    
+    
+## Achievements
 
-----------
 
-#### Python VS R
+* [**This is my first achievement**](#) 
+   
+   Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.
 
-- [python 和 R](http://pan.baidu.com/s/1qXYhQuK)
+***
+
+* [**This is my second achievement**](#) 
+
+    Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.
+
+***
+
+* [**This is my third achievement**](#) 
+
+   Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula
+
+
+## Contact me
+
+[agarwal.akshay.akshay8@gmail.com](mailto:agarwal.akshay.akshay8@gmail.com)

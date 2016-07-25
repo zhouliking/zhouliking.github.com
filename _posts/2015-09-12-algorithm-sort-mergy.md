@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: "7种常见算法实现与分析（归并排序）"
+title: "AAAA"
 date: 2015-09-12  13:00:00
 categories: algorithm
 ---

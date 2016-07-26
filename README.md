@@ -7,12 +7,12 @@
 - Name：ZHOULI
 - School: [UESTC](http://www.uestc.edu.cn/)
 - Major：[Control Science and Engineering](http://baike.baidu.com/view/62820.htm)
-
 - E-Mail：[uestczhouli](http://weibo.com/zhouli)
+
 ---
 
 ###Blog URL
-  Go to blog,please [CLICK HERE](http://zlresource.github.io/)
+Go to blog,please [CLICK HERE](http://zlresource.github.io/)
 ---
 
 ###Home Page

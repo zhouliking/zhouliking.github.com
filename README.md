@@ -13,6 +13,7 @@
 
 ###Blog URL
 - Go to blog, please [__CLICK HERE__](http://zlresource.github.io/)
+
 ---
 
 ###Home Page
@@ -22,7 +23,7 @@
 ---
 
 ###About This Theme 
-#####This theme is very fresh and beauty and the source is modified from [limingyang](https://github.com/limingyang2012)
+> #####This theme is very fresh and beauty and the source is modified from [limingyang](https://github.com/limingyang2012)
 
 
 

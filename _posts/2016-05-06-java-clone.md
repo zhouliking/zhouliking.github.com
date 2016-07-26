@@ -40,10 +40,8 @@ String 为引用变量,而String没有实现cloneable接口
    如下： Student调用Student的，Pet调用Pet的,各调各的clone方法
 
 
-...java
               Student stu = (Student) super.clone();
           		stu.pet = (Pet) stu.pet.clone();	 
-...
 
 1)  Cloneable 标记接口  java.lang.Cloneable
 ​           
@@ -54,26 +52,23 @@ String 为引用变量,而String没有实现cloneable接口
 
 ① 继承Cloneable  -->  ② 重写clone()方法
 
-...java
-class Pet implements Cloneable{
-    //变量 get set .....
+    class Pet implements Cloneable{
+    //变量 get set.... 
             	
-  @Override 
-  protected Object clone() throws CloneNotSupportedException {		
-    return super.clone();    //调用 父类Object中的clone()方法
-  }
-}
-  
-  class Student implements Cloneable{
+      @Override 
+      protected Object clone() throws CloneNotSupportedException {		
+        return super.clone();    //调用 父类Object中的clone()方法
+      }
+    }
+    class Student implements Cloneable{
        //引用变量Person,存在深浅复制问题
       private Pet p;  
       ...get set .....
             
-  @Override
-  protected Object clone() throws CloneNotSupportedException {
-    Student s = (Student) super.clone();
-    s.p = (Pet) s.p.clone();		//深复制，需要调用该引用变量自己的clone()
-    return s;
-  }
-}
-...
+      @Override
+      protected Object clone() throws CloneNotSupportedException {
+        Student s = (Student) super.clone();
+        s.p = (Pet) s.p.clone();		//深复制，需要调用该引用变量自己的clone()
+        return s;
+      }
+    }

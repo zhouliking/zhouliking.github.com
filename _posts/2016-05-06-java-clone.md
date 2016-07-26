@@ -32,18 +32,16 @@ String 为引用变量,而String没有实现cloneable接口
 2> 用java为我们准备的：
  0) Object类中： jdk中为我们准备了用native修饰的clone方法
 
-
-            protected native Object clone() throws CloneNotSupportedException;
+    protected native Object clone() throws CloneNotSupportedException;
 
 为啥是protect类型？：
 1. 保护机制：只有自己的子类才可使用clone()--必须继承Object类。
 2. 防止子类重载clone()方法后，变成public。
    如下： Student调用Student的，Pet调用Pet的,各调各的clone方法
-
-
+...java
               Student stu = (Student) super.clone();
           		stu.pet = (Pet) stu.pet.clone();	 
-
+...
 1)  Cloneable 标记接口  java.lang.Cloneable
 ​           
 2) 若clone的类未实现标记接口Cloneable 会抛异常 java.lang.CloneNotSupportedException
@@ -51,28 +49,28 @@ String 为引用变量,而String没有实现cloneable接口
 #### 三、深克隆例子：
 
 ① 继承Cloneable  -->  ② 重写clone()方法
-
-        class Pet implements Cloneable{
-            	//变量 get set .....
+...java
+  class Pet implements Cloneable{
+        //变量 get set .....
             	
-            	@Override 
-            	protected Object clone() throws CloneNotSupportedException {		
-            		return super.clone();    //调用 父类Object中的clone()方法
-            	}
+        @Override 
+        protected Object clone() throws CloneNotSupportedException {		
+          return super.clone();    //调用 父类Object中的clone()方法
         }
-        class Student implements Cloneable{
-            //引用变量Person,存在深浅复制问题
-          	private Pet p;  
-            ...get set .....
+  }
+  class Student implements Cloneable{
+       //引用变量Person,存在深浅复制问题
+      private Pet p;  
+      ...get set .....
             
-          	@Override
-          	protected Object clone() throws CloneNotSupportedException {
-          		Student s = (Student) super.clone();
-          		s.p = (Pet) s.p.clone();		//深复制，需要调用该引用变量自己的clone()
-          		return s;
-          	}
-        }
-
+      @Override
+    	protected Object clone() throws CloneNotSupportedException {
+        Student s = (Student) super.clone();
+        s.p = (Pet) s.p.clone();		//深复制，需要调用该引用变量自己的clone()
+        return s;
+      }
+  }
+...
 
 ​    
 ​     

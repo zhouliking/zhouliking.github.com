@@ -43,14 +43,14 @@ Semaphore两个构造函数：
 ​      
 1.非公平，传入n个，允许进入资源的线程
 
-
+```java
           public Semaphore(int permits) {
             sync = new NonfairSync(permits);
           }
-
+```
 2.公平
 
-
+```java
           public Semaphore(int permits, boolean fair) {
             sync = fair ? new FairSync(permits) : new NonfairSync(permits);
           }
@@ -58,6 +58,6 @@ Semaphore两个构造函数：
       public void acquire() throws InterruptedException {
         sync.acquireSharedInterruptibly(1);
       }
-
+```
 ​        
 

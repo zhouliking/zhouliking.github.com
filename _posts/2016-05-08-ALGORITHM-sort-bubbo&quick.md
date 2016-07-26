@@ -16,6 +16,7 @@ categories: ALGORITHM
 
 #### 冒泡排序：
 
+```java
         	public static void bubbleSort(int a[]){
         		int i,j;
         		boolean falg=true; //冒泡设置标志位，序列原本	有序时复杂度可为 O(n)
@@ -28,15 +29,16 @@ categories: ALGORITHM
     						a[j]=a[j+1];
     						a[j+1]=temp;
     					}
- 	   			}
+ 	                        }
     			}
         	}
-
+```
 
 冒泡排序最坏情况执行次数：(n-1-1)+（n-1-2）+....+1 --> O(n*n)
 冒泡排序最好情况执行次数：n-1 -->O(n)由于设置
 平均时间复杂度 O(n*n)
-​    
+​  
+
 #### 快速排序：采用分治思想
 
 快速排序是找出一个元素（理论上可以随便找一个）作为基准。
@@ -45,8 +47,8 @@ categories: ALGORITHM
 
 #### 快速排序递归写法：
 
-
-   	 public static void sort(int a[], int start, int end) {
+```java
+   	   public static void sort(int a[], int start, int end) {
 	  		if (end - start < 1) {
 	  			return;
 	  		}
@@ -54,10 +56,11 @@ categories: ALGORITHM
 	  		sort(a, start, mid - 1);
 	  		sort(a, mid + 1, end)
 	    }
-
+```
 
 #### 快速非排序递归写法：非递归可用stack保存状态
 
+```java
  	   public static void sort2(int a[], int start, int end) {
 	  		int mid;
 	  		Stack<Integer> stack = new Stack<Integer>();		
@@ -105,6 +108,7 @@ categories: ALGORITHM
 			a[start] = m;
 			return start;
  	 }
+```
 
 #### 时间复杂度
 

@@ -35,11 +35,12 @@ CopyOnWrite容器即写时复制的容器.当我们往一个容器添加元素�
     
 ##### 1.继承了List接口
 
-
+```java
       public class CopyOnWriteArrayList<E>  
           implements List<E>, RandomAccess, Cloneable, java.io.Serializable { 
         ...
       }
+```
 
 #####  2.读操作加锁，写操作不加锁
 
@@ -50,7 +51,7 @@ CopyOnWrite容器即写时复制的容器.当我们往一个容器添加元素�
       
 //读：get无需加锁
 
-
+```java
       private E get(Object[] a, int index) {
         return (E) a[index];
       }
@@ -82,10 +83,11 @@ CopyOnWrite容器即写时复制的容器.当我们往一个容器添加元素�
             lock.unlock();
         }
     }
+ ```
     
 ##### 3.add和remove操作，修改操作均复制数组
 
-
+```java
       public boolean add(E e) {
         final ReentrantLock lock = this.lock;
         lock.lock();
@@ -123,5 +125,5 @@ CopyOnWrite容器即写时复制的容器.当我们往一个容器添加元素�
             lock.unlock();
         }
     }
-   
+  ``` 
   

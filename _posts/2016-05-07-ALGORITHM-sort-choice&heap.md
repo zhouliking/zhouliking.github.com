@@ -71,21 +71,21 @@ categories: ALGORITHM
     //堆排递归：依次取出，堆顶元素放到最后的位置，并重建堆
 
 
-  	public static void sort2(int a[],int n){
-    		if(n<1){
-    			return;
-    		}
-    		buildMinHeap(a,n);
-    		int temp=a[0]; 
-        a[0]=a[n-1]; a[n-1]=temp; sort2(a,n-1);		
-  	}
+    	public static void sort2(int a[],int n){
+    		 if(n<1){
+    			 return;
+    	  	}
+    	  	buildMinHeap(a,n);
+    	  	int temp=a[0]; 
+          a[0]=a[n-1]; a[n-1]=temp; sort2(a,n-1);		
+    	}
 
 
-    //堆排非递归：依次取出，堆顶元素放到最后的位置，并重建堆
-    public static void sort(int a[]) {
-    	for(int i=a.length-1;i>=0;i--){
-    			buildMinHeap(a,i+1);
-    			int temp=a[0]; a[0]=a[i]; a[i]=temp;
-    	 }			
-    }
+     //堆排非递归：依次取出，堆顶元素放到最后的位置，并重建堆
+      public static void sort(int a[]) {
+    	  for(int i=a.length-1;i>=0;i--){
+    		  	buildMinHeap(a,i+1);
+    		  	int temp=a[0]; a[0]=a[i]; a[i]=temp;
+    	   }			
+      }
 

@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "字符串"
+title:  "字符串处理：移位&全排&最大子序列"
 date:  2016-05-15
 categories: STRING
 ---
 
-字符串
+字符串：移位&全排&最大子序
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "¶ş²æÊ÷½¨Á¢&±éÀú"
+title:  "äºŒå‰æ ‘å»ºç«‹&éå†"
 date:  2016-05-13
 categories: ALGORITHM:
 ---
@@ -9,10 +9,10 @@ BiTree:
 
 ---
 
-- Ä¿Â¼
+- ç›®å½•
 {:toc}
 
-#### Ê÷¶¨Òå
+#### æ ‘å®šä¹‰
 
 ```java
 class BiTree{  
@@ -24,15 +24,15 @@ class BiTree{
 		this.right = null;
 		this.data = data;
 		}
-        ¡­geter/setter
+        â€¦geter/setter
 }
 ```
 
-#### ½¨Á¢¶ş²æÊ÷
+#### å»ºç«‹äºŒå‰æ ‘
 
 ```java
 static String str = "ab#d##c#e##";
-	public static BiTree craetBiTree(BiTree node){ //´´½¨
+	public static BiTree craetBiTree(BiTree node){ //åˆ›å»º
 	    char c = str.charAt(i++); 
 		if(c =='#'){
 			node = null;
@@ -43,7 +43,7 @@ static String str = "ab#d##c#e##";
 		}
 		return node;	
 	}
-public static void preOderTraverse(BiTree node){ //Ç°Ğò
+public static void preOderTraverse(BiTree node){ //å‰åº
 		if(node != null){
 			System.out.println(node.getData());
 			preOderTraverse(node.getLetf());
@@ -66,9 +66,9 @@ public static void preOderTraverse(BiTree node){ //Ç°Ğò
 	}
 ```
 
-#### ÒÑÖª£ºÖĞĞò +Ç°Ğò£¬ÇóºóĞø£¨½ö·´Ğò£©£º
+#### å·²çŸ¥ï¼šä¸­åº +å‰åºï¼Œæ±‚åç»­ï¼ˆä»…ååºï¼‰ï¼š
 
-ÀûÓÃÇ°ĞòÏÈ³öÏÖµÄÎªroot£¬²»¶ÏµÄ½«ÖĞĞò·Ö³É£¬rootÓÒ¡¢×ó±ßµİ¹é,½«rootÊä³ö
+åˆ©ç”¨å‰åºå…ˆå‡ºç°çš„ä¸ºrootï¼Œä¸æ–­çš„å°†ä¸­åºåˆ†æˆï¼Œrootå³ã€å·¦è¾¹é€’å½’,å°†rootè¾“å‡º
 
 ```java
 	public static void preAndInToPostOder(char mids[],char pres[],
@@ -76,7 +76,7 @@ int start,int end){
 		int rootIndex=0;
 		if(start>end)
 			return;
-		for(int i=0;i<pres.length;i++){ ÔÚÖĞĞòÖĞÑ°ÕÒ£¬¸ù½Úµã
+		for(int i=0;i<pres.length;i++){ åœ¨ä¸­åºä¸­å¯»æ‰¾ï¼Œæ ¹èŠ‚ç‚¹
 			for(int j=start;j<=end;j++){
 				if(pres[i]==mids[j]){
 					rootIndex = j;
@@ -84,16 +84,16 @@ int start,int end){
 				}
 			}
 		}
-		//·´ÏòÊä³öºóĞø£¬¿ÉÒÔÓÃÊı×é»òlistÏÈ´æ×Å
+		//åå‘è¾“å‡ºåç»­ï¼Œå¯ä»¥ç”¨æ•°ç»„æˆ–listå…ˆå­˜ç€
 		System.out.println(mids[rootIndex]);		
-		preAndInToPostOder(mids, pres, rootIndex+1,end); rootÓÒ±ß
-		preAndInToPostOder(mids, pres, start, rootIndex-1); root×ó±ß	
+		preAndInToPostOder(mids, pres, rootIndex+1,end); rootå³è¾¹
+		preAndInToPostOder(mids, pres, start, rootIndex-1); rootå·¦è¾¹	
 	}
 ```
 
-#### ÒÑÖª£ºÖĞĞò +ºóĞò£¬ÇóÇ°Ğø£º
+#### å·²çŸ¥ï¼šä¸­åº +ååºï¼Œæ±‚å‰ç»­ï¼š
 
-·´ÏòÈ¡³öºóĞòµã£¬¼«Îªroot½Úµã£¬È»ºóÔÚÖĞĞòÖĞÑ°ÕÒ£¬½«ÖĞĞò·Ö³É£¬root×ó£¬ÓÒ±ßÒÀ´Î±éÀú
+åå‘å–å‡ºååºç‚¹ï¼Œæä¸ºrootèŠ‚ç‚¹ï¼Œç„¶ååœ¨ä¸­åºä¸­å¯»æ‰¾ï¼Œå°†ä¸­åºåˆ†æˆï¼Œrootå·¦ï¼Œå³è¾¹ä¾æ¬¡éå†
 
 ```java
 public static void postAndInToPreOder(char mids[],char post[],
@@ -109,8 +109,8 @@ int start,int end){
 				}
 			}
 		}
-		System.out.println(mids[rootIndex]);Ö±½ÓÊä³öÖĞĞò£¬ÖĞµÄroot½Úµã
-		postAndInToPreOder(mids, post, start, rootIndex-1); root×ó±ß
-		postAndInToPreOder(mids, post, rootIndex+1,end);    rootÓÒ±ß
+		System.out.println(mids[rootIndex]);ç›´æ¥è¾“å‡ºä¸­åºï¼Œä¸­çš„rootèŠ‚ç‚¹
+		postAndInToPreOder(mids, post, start, rootIndex-1); rootå·¦è¾¹
+		postAndInToPreOder(mids, post, rootIndex+1,end);    rootå³è¾¹
 	}
 ```

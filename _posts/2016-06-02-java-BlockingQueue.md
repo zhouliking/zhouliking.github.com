@@ -16,18 +16,20 @@ java并发容器源码分析-BlockingQueue
 
 JDK5中添加了新的concurrent包，其中包含了很多并发容器，这些容器针对多线程环境进行了优化，大大提高了容器类在并发环境下的执行效率。
 
-一、CopyOnWriteArrayList/CopyOnWriteArraySet
+> 1. CopyOnWriteArrayList/CopyOnWriteArraySet
     JDK中并没有提供CopyOnWriteMap，我们可以参考CopyOnWriteArrayList来实现一个
-二、BlockingQueue
-三、ConcurrentHashMap
+> 2. BlockingQueue
+> 3. ConcurrentHashMap
 
 #### 二、BlockingQueue接口
 
 ```java
+
     //实现了java.util.Queue接口
     public interface BlockingQueue<E> extends Queue<E> {
     ...
     }
+    
 ```
 
 ##### 1.BlockingQueue接口主要实现类

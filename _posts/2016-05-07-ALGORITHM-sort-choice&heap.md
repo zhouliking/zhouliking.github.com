@@ -15,6 +15,7 @@ categories: ALGORITHM
 
 #### 选择排序：
 
+```java
     int min;
     	for(int i=0;i<a.length-1;i++){
     		min=i;
@@ -29,7 +30,7 @@ categories: ALGORITHM
     			a[i]=temp;
     		}
     	}
-
+```
 #### 堆排：
 
 堆排序与快速排序，归并排序一样都是时间复杂度为O(N*logN) 
@@ -43,7 +44,7 @@ categories: ALGORITHM
 每次插入都是将新数据放在数组最后，然后和父节点比较，进行调整，i结点的父结点下标就为(i – 1) / 2 从0 开始标号
 堆的删除：只能删除第0个数据，为了便于重建堆，实际的操作是将最后一个数据的值赋给根结点，然后再从根结点开始进行一次从上向下的调整。调整时先在左右儿子结点中找最小的，如果父结点比这个最小的子结点还小说明不需要调整了，相当于从根结点将一个数据的“下沉”过程
 原理：从 底层n/2开始，比较节点左右节点的值，找到最小的，并进行替换依次 向堆的上层进行，将最小值，移到堆顶 
-
+```java
     public static void buildMinHeap(int a[],int n) {
     		int left,right;
     		int min;
@@ -88,4 +89,4 @@ categories: ALGORITHM
     		  	int temp=a[0]; a[0]=a[i]; a[i]=temp;
     	   }			
       }
-
+```

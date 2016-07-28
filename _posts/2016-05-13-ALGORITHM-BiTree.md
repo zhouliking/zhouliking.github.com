@@ -1,18 +1,18 @@
 ---
 layout: post
-title:  "二叉树建立&遍历"
+title:  "二叉树:建立&遍历&知中序、前序求后续"
 date:  2016-05-13
-categories: ALGORITHM:
+categories: ALGORITHM
 ---
 
-BiTree:
+二叉树:建立&遍历&知中序、前序求后续
 
 ---
 
 - 目录
-{:toc}
+  {:toc}
 
-#### 树定义
+#### 二叉树在Java中定义：
 
 ```java
 class BiTree{  
@@ -24,7 +24,7 @@ class BiTree{
 		this.right = null;
 		this.data = data;
 		}
-        …geter/setter
+       // …geter/setter
 }
 ```
 

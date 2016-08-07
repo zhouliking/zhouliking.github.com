@@ -9,6 +9,7 @@ layout: default
             <ul class="posts" data-cate="all" >    
                 {% for post in  site.posts %}
                 <li>
+				   <h2>{{ site.baseurl }}{{ post.url }}</h2>
                     <a href="{{ site.baseurl }}{{ post.url }}" >
                         <h4>{{ post.title }}</h4>
                         <span class="date">{{ post.date | date_to_string }}</span>

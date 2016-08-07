@@ -36,9 +36,21 @@ layout: default
             </ul>
             {% endfor %}
 
+            <!--category-->
+            <div class="category">
+                <div class="category-content">
+                    <h3>[ CATEGORY ]</h3>
+                    <ul class="category-list">
+                        <li data-cate="all">[ all ]<span>{{site.posts | size}}</span></li>
+                            {% for category in site.categories %}
+                        <li data-cate="{{ category | first }}">
+                                [ {{ category | first }} ]<span>{{ category | last | size }}</span>
+                        </li>
+                            {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
 		
-
-       
     </div>
 </div> 

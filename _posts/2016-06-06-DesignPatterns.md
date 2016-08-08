@@ -285,65 +285,61 @@ QuackBehavior mQuackBehavior; 策略组2
 
 ##### 三层构架：
 
-数据库访问层、业务逻辑层、表示层，层与层之间建立Façade，提供简单的功能接口方法，减小层与层之间调用复杂性，也降低了耦合度
+	数据库访问层、业务逻辑层、表示层，层与层之间建立Façade，提供简单的功能接口方法，减小层与层之间调用复杂性，也降低了耦合度
 
 ##### 外观类实现：
 
- 1.可以用单例实现，也可以用static修饰其中方法（工具类的写法：类名.方法名()）
+	1.可以用单例实现，也可以用static修饰其中方法（工具类的写法：类名.方法名()）
 
-![1](/images/m4.png)
+![1](/images/facade1.png)
 
 #### 命令模式
 
 ##### 功能： 
 
-将请求封装成一系列命令对象，然后对这个对象操作，这个命令对象可以存储、转发、撤销。
+	将请求封装成一系列命令对象，然后对这个对象操作，这个命令对象可以存储、转发、撤销。
 
 #### 工厂
 
 ##### 功能：
 
-使用者，不必知道创建的该对象复杂过程。如创建汽车类（需要先创建Engine等），用工厂方法创建只需 factory.createCar();
+	使用者，不必知道创建的该对象复杂过程。如创建汽车类（需要先创建Engine等），用工厂方法创建只需 factory.createCar();
 
 ##### 简单工厂模式 ：
 
-新增对象时，需要修改代码
+	新增对象时，需要修改代码
 
-
-```java
-	 public static Car createCar(String car){  
-	        Car c = null;  
-	        if("Benz".equalsIgnoreCase(car))  
-	            c = new Benz();  
-	        else if("Bmw".equalsIgnoreCase(car))  
-	            c = new Bmw();  
-	        return c;  
-	    }  
-
-```
+	```java
+		public static Car createCar(String car){  
+			Car c = null;  
+			if("Benz".equalsIgnoreCase(car))  
+				c = new Benz();  
+			else if("Bmw".equalsIgnoreCase(car))  
+				c = new Bmw();  
+			return c;  
+		}
+	```
 
 ##### 工厂方法模式：
 
-具体单个工厂，只创建某个具体对象。只能实现共同接口car1;符合对修改关闭，对扩展开发原则
+	具体单个工厂，只创建某个具体对象。只能实现共同接口car1;符合对修改关闭，对扩展开发原则
 
-
-```java
-        class BenzFactory extends Car1{  
-            public Car createCar(String car) throws Exception {  
-	        return new Benz();  
-	    }  
-        }  
-	class BmwFactory extends Car1{  
-	    public Car createCar(String car) throws Exception {  
-	        return new Bmw();  
-	    }  
-	} 
-
-```
+	```java
+		class BenzFactory extends Car1{  
+			public Car createCar(String car) throws Exception {  
+				return new Benz();  
+			}  
+		}  
+		class BmwFactory extends Car1{  
+			public Car createCar(String car) throws Exception {  
+				return new Bmw();  
+			}  
+		}
+	```
 
 ##### 抽象工厂方法：
 
-用来生产不同产品族的全部产品，增加时需要增加产品族全部产品
+	用来生产不同产品族的全部产品，增加时需要增加产品族全部产品
 
 
 

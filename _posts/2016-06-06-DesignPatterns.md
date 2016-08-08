@@ -62,21 +62,26 @@ categories: Design Patterns
 	
 *MVC是三个经典的设计模式的演变：观察者模式(Observer)(Pub/Sub), 策略模式(Strategy)和组合模式(Composite)*
 
-创建型(5个)：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式
+***创建型***(5个)：
+>工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式
 
-结构型模式(7个)：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式
+***结构型模式***(7个)：
+>适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式
 
-行为型模(11个)：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、
-命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式
+***行为型模***(11个)：
+>策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、
+>命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式
 
-还有两类：并发型模式和线程池模式 
+***还有两类***：
+>并发型模式和线程池模式
 
 #### Proxy代理模式
 
 ##### Java.lang.reflact.Proxy类：
 
 动态的生成一个class byte，该字节码继承Proxy类，与你指定的接口。然后再利用您指定的classloader将class byte加载进系统，最后生成个Proxy对象。
-当用户调用，任何方法均会到InvocationHandler接口实现类中调用，`invoke(Object proxy, Method method, Object[] args)`，在此方法中，通过反射调用实现类的方法。
+当用户调用，任何方法均会到InvocationHandler接口实现类中调用
+`invoke(Object proxy, Method method, Object[] args)`，在此方法中，通过反射调用实现类的方法。
 
 ##### 使用：
 
@@ -209,21 +214,21 @@ QuackBehavior mQuackBehavior; 策略组2
 
 
 ```java
-             class Adapter implements Ainterface {
-                 B b; 组合方式获取B的方法
-                 public Adapter (B b){ 通过构造函数传入
-                     this.b = b;
-                 }
-             }
+	class Adapter implements Ainterface {
+		B b; //组合方式获取B的方法
+		public Adapter (B b){ //通过构造函数传入
+			this.b = b;
+		}
+	}
 ```
 
 - 类适配器：实现目标A接口，并继承 B对象(从而能B的方法)
 
 
 ```java
-class Adapter extends B implements Ainterface {
-通过继承来获取B类的方法
-}
+	class Adapter extends B implements Ainterface {
+		//通过继承来获取B类的方法
+	}
 ```
 
 ##### 举例：

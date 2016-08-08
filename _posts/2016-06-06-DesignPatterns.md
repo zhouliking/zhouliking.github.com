@@ -12,7 +12,6 @@ categories: Design Patterns
 - 目录
 {:toc}
 
-![1](/images/m1.png)
 
 #### 面向对象的设计原则
 
@@ -40,29 +39,27 @@ categories: Design Patterns
 
 ##### 6.组合聚合：
 
-减少继承，多用接口聚合
+>减少继承，多用接口聚合
 
-聚合：对象之间生命周期没有影响 
-
-
-```java
-                 private Discount discount;
-	         public void setDiscount(Discount discount) {
-		       this.discount = discount;
-	         }
-
-```
-组合 : 生命周期相互影响
-
+>聚合：对象之间生命周期没有影响 
 
 ```java
-private Discount discount=new 子类()
+>       private Discount discount;
+>	public void setDiscount(Discount discount) {
+>		this.discount = discount;
+>	}
+```
+>组合 : 生命周期相互影响
+
+```java
+	private Discount discount=new 子类()
 
 ```
-##### 迪米特原则：
 
-减少之间的耦合，一个实体尽量减少与其他实体联系，中间环节给代理
-MVC是三个经典的设计模式的演变：观察者模式(Observer)(Pub/Sub), 策略模式(Strategy)和组合模式(Composite)
+##### 7.迪米特原则：
+
+>减少之间的耦合，一个实体尽量减少与其他实体联系，中间环节给代理
+>MVC是三个经典的设计模式的演变：观察者模式(Observer)(Pub/Sub), 策略模式(Strategy)和组合模式(Composite)
 
 创建型(5个)：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式
 

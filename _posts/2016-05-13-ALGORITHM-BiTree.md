@@ -2,7 +2,7 @@
 layout: post
 title:  "二叉树:建立&遍历&知中序、前序求后续"
 date:  2016-05-13
-categories: ALGORITHM
+categories: Algorithm
 ---
 
 二叉树:建立&遍历&知中序、前序求后续

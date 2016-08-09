@@ -74,7 +74,7 @@ String s = “This is only a” + “ simple” + “ test” 仅仅创建一个
 ```java
     //StringBuilder
 	public final class StringBuilder extends AbstractStringBuilder
-									implements java.io.Serializable, CharSequence
+		implements java.io.Serializable, CharSequence
 	{
 	   //...
 	}
@@ -82,14 +82,14 @@ String s = “This is only a” + “ simple” + “ test” 仅仅创建一个
 ```java
     //StringBuilder
 	 public final class StringBuffer extends AbstractStringBuilder
-										implements java.io.Serializable, CharSequence
+		implements java.io.Serializable, CharSequence
 	{
 
 	   //...
 	}
 ```
 ### new String("123")创建几个对象：
- 一个或两个
+- 一个或两个
 - 当常量池中没有该串时，会在常量池中创建一个，然后在堆中new一个
 ```java
     //String的构造器，形参 String original 会在常量池中创建一个

@@ -17,8 +17,8 @@
 ---
 
 ###Home Page
-[![Home Page](/images/bloghome1.png)](http://zlresource.github.io/)
-[![Blog Page](/images/zl-blog1.png)](http://zlresource.github.io/)
+[![Home Page](/images/bloghome1.png)](https://zlresource.github.io/)
+[![Blog Page](/images/zl-blog1.png)](https://zlresource.github.io/)
 
 ---
 

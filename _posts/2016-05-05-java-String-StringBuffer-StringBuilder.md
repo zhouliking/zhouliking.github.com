@@ -8,8 +8,8 @@ categories: JAVA
 字符串：移位&全排&最大子序
 
 ---
-
-###String类:__是不可变类__
+###String类:
+__是不可变类__,任何对String的改变都会引发新的String对象的生成；
 
 
 ### AbstractQueuedSynchronizer类：

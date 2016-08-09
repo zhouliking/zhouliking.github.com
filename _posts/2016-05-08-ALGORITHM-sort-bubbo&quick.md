@@ -2,7 +2,7 @@
 layout: post
 title:  "7种常见算法实现与分析（冒泡&快速排序）"
 date:  2016-05-07
-categories: ALGORITHM
+categories: Algorithm
 ---
 
 7种常见算法实现与分析（冒泡&快速排序）

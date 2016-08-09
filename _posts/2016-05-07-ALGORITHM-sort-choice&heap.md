@@ -2,7 +2,7 @@
 layout: post
 title:  "7种常见算法实现与分析（选择排序 & 堆排序）"
 date:  2015-08-07
-categories: ALGORITHM
+categories: Algorithm
 ---
 
 7种常见算法实现与分析（选择排序 & 堆排序）

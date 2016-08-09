@@ -2,7 +2,7 @@
 layout: post
 title:  "字符串处理：移位&全排&最大子序列"
 date:  2016-05-15
-categories: STRING
+categories: String
 ---
 
 字符串：移位&全排&最大子序

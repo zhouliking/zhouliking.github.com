@@ -10,7 +10,9 @@ String类，StringBuffer类，StringBuilder类
 ---
 
 ### String类:
-##### __是不可变类__,任何对String的改变都会引发新的String对象的生成。
+
+##### __是不可变类__,
+- 任何对String的改变都会引发新的String对象的生成。
 
 `修饰为final的原因`：
 主要是为了“效率” 和 “安全性” 的缘故。若 String允许被继承, 由于它的高度被使用率, 可能会降低程序的性能，所以String被定义成final。

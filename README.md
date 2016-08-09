@@ -12,13 +12,13 @@
 ---
 
 ###Blog URL
-- Go to blog, please [__CLICK HERE__](http://zlresource.github.io/)
+- Go to blog, please [__CLICK HERE__](https://zlresource.github.io/)
 
 ---
 
 ###Home Page
-[![Home Page](/images/zl-home.jpg)](http://zlresource.github.io/)
-[![Blog Page](/images/zl-blog1.jpg)](http://zlresource.github.io/)
+[![Home Page](/images/bloghome1.png)](http://zlresource.github.io/)
+[![Blog Page](/images/zl-blog1.png)](http://zlresource.github.io/)
 
 ---
 

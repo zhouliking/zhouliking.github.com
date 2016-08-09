@@ -5,7 +5,7 @@ date:  2016-06-05
 categories: JAVA
 ---
 
-String类，StringBuffer类，StringBuilder类
+String类，StringBuffer类，StringBuilder类,效率,原理
 
 ---
 

@@ -1,13 +1,16 @@
 ---
 layout: post
 title:  "JAVA中String/StringBuffer/StringBuilder异同"
-date:  2016-06-05
+date:  2016-05-05
 categories: JAVA
 ---
 
 String类，StringBuffer类，StringBuilder类,效率,原理
 
 ---
+
+- 目录
+{:toc}
 
 ### String类:
 

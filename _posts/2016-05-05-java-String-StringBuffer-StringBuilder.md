@@ -5,10 +5,14 @@ date:  2016-06-05
 categories: JAVA
 ---
 
-Java中最常见，用得最为广泛的字符串类String，__String类是不可变类__
+字符串：移位&全排&最大子序
+
 ---
 
-#### AbstractQueuedSynchronizer类：
+###String类:__是不可变类__
+
+
+### AbstractQueuedSynchronizer类：
 
 java.util.concurrent的基础。J.U.C中宣传的封装良好的同步工具
 

@@ -16,7 +16,6 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 
 - 集合相对于数组优点：可变长
 ![collection](/images/java-collection.png)
-
 ### 单列集合遍历(List,Set)
 
 - Collection均可用Iterator迭代器遍历

@@ -25,23 +25,20 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 ##### 集合遍历的3种方式：
 
 - 方法一：Iterator迭代器
-
-```java	
+```java
 	Iterator<Integer> it = set.iterator();
 	while (it.hasNext()) {
 		it.next()
 	}
 ```
 - 方式二：for(:) 本质也是Iterator迭代器
-
-```java	
+```java
 	for (Integer obj : set) {
 		//obj
 	}
 ```
 - 方式三: .size() 通过`get(index)`方法获取
-
-```java	
+```java
 	for(int i=0;i<set.size();i++){
 		  list.get(index)
 	}
@@ -178,6 +175,7 @@ public class ArrayList extends AbstractList
 - 两者区别：
 1. 线程安全：Vector方法都是线程安全，同步的synchronized
 2. 扩充大小：往一个ArrayList或者Vector里插入一个元素的时候，如果内部数组空间不够了，ArrayList或者Vector就要扩展它的大小，Vector在默认情况下是增长一倍的大小，而ArrayList增加50%的大小。Vector中还可以在构造器中指定：初始大小，增长大小，ArrayList，仅能指定初始容量。
+
 ```java
 	public Vector(int initialCapacity, int capacityIncrement) {  }
 ```

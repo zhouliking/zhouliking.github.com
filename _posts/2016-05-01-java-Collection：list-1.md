@@ -52,7 +52,14 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 -List与set 中用迭代器遍历时，调用next()都会 checkForComodification()，会引起expectedModCount，modCount不相等，从而抛出异常
 - ***解决方案***
 1. 用Iterator的remove()方法，会有expectedModCount = modCount操作，从而不会抛异常
-2. 用
+2. 多线程下：
+① iterator迭代的时候使用synchronized或者Lock进行同步
+② 并发容器CopyOnWriteArrayList代替ArrayList和Vector
+
+
+
+
+
 
 ##### __是不可变类__,
 - 任何对String的改变都会引发新的String对象的生成。

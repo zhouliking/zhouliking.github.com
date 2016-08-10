@@ -15,23 +15,23 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 ### 集合类-概略图
 
 Collection 单列集合
-│--List 按照存入顺序，可重复
-│   │--LinkedList双向链表
-│   │--ArrayList
-│   └--Vector 
-│　     └Stack 
-└-Set  不可重复，无序
-│	   │--TreeSet
-│	   └- HashSet
-│         └LinkedHashSet        
-└--Queue since 1.5
-└-PriorityQueue 本质上就是一个最小堆，数组，非安全，每次取出高优先级
+	│--List 按照存入顺序，可重复
+	│   │--LinkedList双向链表
+	│   │--ArrayList
+	│   └--Vector 
+	│　     └Stack 
+	└-Set  不可重复，无序
+	│	   │--TreeSet
+	│	   └- HashSet
+	│         └LinkedHashSet        
+	└--Queue since 1.5	
+		└-PriorityQueue 本质上就是一个***最小堆***，数组，非安全，每次取出高优先级
 
 Map双列集合：键值对 
-  │-- TreeMap
-│-- Hashtable 
-└-  HashMap
-     └ LinkedHashMap
+	│-- TreeMap
+	│-- Hashtable 
+	└-  HashMap
+		 └ LinkedHashMap
 
 ### 单列集合遍历
 

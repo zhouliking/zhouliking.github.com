@@ -25,13 +25,11 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 ##### 集合遍历的3种方式：
 
 - 方法一：Iterator迭代器
-```java
-	
+```java	
 	Iterator<Integer> it = set.iterator();
 	while (it.hasNext()) {
 		it.next()
 	}
-
 ```
 - 方式二：for(:) 本质也是Iterator迭代器
 ```java	
@@ -46,7 +44,7 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 	}
 ```
 
-##### Iterator迭代器修改时异常
+##### ***Iterator迭代器修改时异常***
 
 - List与set 中用迭代器遍历时，调用next()都会 checkForComodification()，会引起expectedModCount，modCount不相等，从而抛出异常
 
@@ -57,7 +55,9 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 	② 并发容器CopyOnWriteArrayList代替ArrayList和Vector
 
 ### List接口
+
 - 实现类： ArrayList、LinkedList、Vector（子类stack）
+
 1. 数组式存储
 - ArrayList 和Vector是采用数组方式存储数据，都允许直接序号索引元素，但是插入数据要移动数组元素，所以索引数据快插入，删除数据慢。
 Vector由于使用了synchronized方法（线程安全）所以性能上比ArrayList要差。

@@ -12,13 +12,42 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 - 目录
 {:toc}
 
-### 集合类-概略图
+### Java集合类-概述
+- 数组：不可变长
+- 集合相对于数组优点：可变长
 
 ![collection](/images/java-collection.png)
 
-### 单列集合遍历
+### 单列集合遍历(List,Set)
 
+- Collection均可用Iterator迭代器遍历
+- 其中List除了具有Collection接口必备的iterator()方法外List还提供一个listIterator(n)方法，返回一个ListIterator接口，允许从n处向前或向后遍历(.hasPrevious() 与 .previoue() )双向遍历。
 
+#####集合遍历的3种方式：
+- 方法一：Iterator迭代器
+```java
+	
+	Iterator<Integer> it = set.iterator();
+	while (it.hasNext()) {
+		it.next()
+	}
+
+```
+
+- 方式二：for(:) 本质也是Iterator迭代器
+```java	
+	for (Integer obj : set) {
+		//obj
+	}
+```
+
+- 方式三: .size() 通过`get(index)`方法获取
+```java
+	
+	for(int i=0;i<set.size();i++){
+		  list.get(index)
+	}
+```
 
 ##### __是不可变类__,
 - 任何对String的改变都会引发新的String对象的生成。

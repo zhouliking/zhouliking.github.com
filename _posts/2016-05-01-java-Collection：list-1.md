@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "JAVA中集合List、Set、Map功能与源码分析（1）"
+title:  "JAVA集合List、Set、Map功能与源码分析（1）"
 date:  2016-05-03
 categories: JAVA
 ---
@@ -25,6 +25,7 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 ##### 集合遍历的3种方式：
 
 - 方法一：Iterator迭代器
+
 ```java	
 	Iterator<Integer> it = set.iterator();
 	while (it.hasNext()) {
@@ -32,12 +33,14 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 	}
 ```
 - 方式二：for(:) 本质也是Iterator迭代器
+
 ```java	
 	for (Integer obj : set) {
 		//obj
 	}
 ```
 - 方式三: .size() 通过`get(index)`方法获取
+
 ```java	
 	for(int i=0;i<set.size();i++){
 		  list.get(index)
@@ -83,7 +86,7 @@ Vector由于使用了synchronized方法（线程安全）所以性能上比Array
 			Node<E> next;
 			Node<E> prev;
 			Node(Node<E> prev, E element, Node<E> next) {
-				this.item = element; this.next = next; this.prev = prev;
+			   this.item = element; this.next = next; this.prev = prev;
 			}
 	}
 ```

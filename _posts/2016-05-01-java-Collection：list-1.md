@@ -52,6 +52,7 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 1. 用Iterator的remove()方法，会有expectedModCount = modCount操作，从而不会抛异常
 2. 多线程下：
 	① iterator迭代的时候使用synchronized或者Lock进行同步
+	
 	② 并发容器CopyOnWriteArrayList代替ArrayList和Vector
 
 ### List接口

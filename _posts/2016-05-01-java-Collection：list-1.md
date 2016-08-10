@@ -25,6 +25,7 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 ##### 集合遍历的3种方式：
 
 - 方法一：Iterator迭代器
+
 ```java
 	Iterator<Integer> it = set.iterator();
 	while (it.hasNext()) {
@@ -32,12 +33,14 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 	}
 ```
 - 方式二：for(:) 本质也是Iterator迭代器
+
 ```java
 	for (Integer obj : set) {
 		//obj
 	}
 ```
 - 方式三: .size() 通过`get(index)`方法获取
+
 ```java
 	for(int i=0;i<set.size();i++){
 		  list.get(index)
@@ -70,6 +73,7 @@ Vector由于使用了synchronized方法（线程安全）所以性能上比Array
 - 还提供了一些作为栈、队列、双端队列的方法。(这些方法中有些彼此之间只是名称的区别，以使得这些名字在特定的上下文中显得更加的合适。)
 
 ##### LinkedList类源码
+
 ```java
 	public class LinkedList<E>
 		extends AbstractSequentialList<E>
@@ -90,12 +94,14 @@ Vector由于使用了synchronized方法（线程安全）所以性能上比Array
 
 ##### LinkedList不是线程安全
 - 可用java.util.Collections集合工具类来包装
+
 ```java
 	List synlist = Collections.synchronizedList(list);
 ```
 - 同样的可以包装：List、Set、Map
  `Collections.synchronizedXxx(非安全list/map/set)`
 - Collections集合工具类用synchronized同步,源码如下：
+
 ```java
 	public boolean equals(Object o) {
 		synchronized (mutex) {return list.equals(o);}
@@ -106,16 +112,19 @@ Vector由于使用了synchronized方法（线程安全）所以性能上比Array
 - 动态数组，继承了AbstractList, List接口
 
 ##### 源码分析
+
 ```java
 public class ArrayList extends AbstractList  
 	implements List,Cloneable,Serializable, RandomAccess
 ```
 - 属性只有两个：
+
 ```java
 	private transient Object[] elementData; //不进行序列化,元素数组
 	private int size;     // 包含元素的数量
 ```
 - 构造器3个：
+
 ```java
 	//1.无参数，默认数组10个大小
     public ArrayList() {
@@ -137,6 +146,7 @@ public class ArrayList extends AbstractList
 ```
 ##### Add()方法
 - 每次增加前会检测，是否 > oldCapacity，是否需要扩容，则不会发生越界
+
 ```java
 	public boolean add(E e) {
 		ensureCapacityInternal(size + 1);  // 每次增加元素时，modCount++;    
@@ -153,6 +163,7 @@ public class ArrayList extends AbstractList
 
 ##### .clear( )方法
 - 并没有修改elementData的长度,仅将元素清空，size = 0
+
 ```java
 	public void clear() {
 		modCount++; 

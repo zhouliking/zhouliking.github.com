@@ -13,9 +13,8 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 {:toc}
 
 ### Java集合类-概述
-- 数组：不可变长
-- 集合相对于数组优点：可变长
 
+- 集合相对于数组优点：可变长
 ![collection](/images/java-collection.png)
 
 ### 单列集合遍历(List,Set)
@@ -42,12 +41,18 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 ```
 
 - 方式三: .size() 通过`get(index)`方法获取
-```java
-	
+```java	
 	for(int i=0;i<set.size();i++){
 		  list.get(index)
 	}
 ```
+
+##### Iterator迭代器修改时异常
+
+-List与set 中用迭代器遍历时，调用next()都会 checkForComodification()，会引起expectedModCount，modCount不相等，从而抛出异常
+- ***解决方案***
+1. 用Iterator的remove()方法，会有expectedModCount = modCount操作，从而不会抛异常
+2. 用
 
 ##### __是不可变类__,
 - 任何对String的改变都会引发新的String对象的生成。

@@ -61,6 +61,46 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 - 红黑树与AVL树缺点：
 1. 插入、删除添加了额外的操作，着色、旋转 操作对其进行修复平衡
 
+#### TreeMap
+- `TreeMap是红黑树实现`
+- `必须有比较器`，查询，更新都有比较操作
+
+- 1. TreeMap属性（4个）
+```java
+	private final Comparator<? super K> comparator; //比较器
+	private transient Entry<K,V> root = null;  //树根
+	private transient int size = 0; 
+	private transient int modCount = 0;
+```
+
+- 2. TreeMap构造器
+```java
+	public TreeMap() {
+		comparator = null;
+	}
+	public TreeMap(Comparator<? super K> comparator) {
+		this.comparator = comparator;
+	}
+```
+
+- 3. TreeMap的Entry节点 (6个属性)
+```java
+	tatic final class Entry<K,V> implements Map.Entry<K,V> {
+		K key;
+		V value;
+		Entry<K,V> left = null;
+		Entry<K,V> right = null;
+		Entry<K,V> parent;      父节点
+		boolean color = BLACK;  默认颜色
+		//...
+	}
+```
+- 4. TreeMap的特点
+1. TreeMap：允许空值，key不可以为空，线程不安全
+2. 必有比较器
+3. 遍历TreeMap得到的结果集是有序的(中序遍历)
+4. TreeMap的各项操作的平均时间复杂度为O（logn）
+
 
 ### HashSet 与 HashMap/HashTable
 

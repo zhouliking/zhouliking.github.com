@@ -12,7 +12,7 @@ Http缓存及实现原理、 Fiddler：http调试工具
 - 目录
 {:toc}
 
-### 缓存概述
+### 缓存概述 
 
 > 浏览器将最后修改时间发送请求给web服务器，web服务器收到请求后跟服务器上的文档最后修改的时间对比，如果web服务器上最新文档修改时间小于或者等于浏览器发送过来的，则发送304给浏览器，使用缓存版本。
 
@@ -26,13 +26,13 @@ Http缓存及实现原理、 Fiddler：http调试工具
 
 - 1.当资源第一次被访问的时候，HTTP头部如下：
 
-	```
-		GET /a.html HTTP/1.1
-		Host    127.0.0.1
-		...
-		Keep-Alive          300
-		Connection          keep-alive
-	```
+```
+	GET /a.html HTTP/1.1
+	Host    127.0.0.1
+	...
+	Keep-Alive          300
+	Connection          keep-alive
+```
 
 - 2.第一次被访问,HTTP返回头部如下:
 
@@ -80,7 +80,7 @@ Http缓存及实现原理、 Fiddler：http调试工具
 
 > 6. 如果服务器经过匹配发现文件修改过了，就会将文件资源返回，并带上新文件状态信息。
 
-- 页面刷新
+- 页面刷新(F5)
 
 ```
 	If-Modified-Since   Wed, 18 Nov 2009 15:54:52 GMT
@@ -92,5 +92,11 @@ Http缓存及实现原理、 Fiddler：http调试工具
 	Cache-Control   max-age=0   // 文件立即过期
 ```
 
+- 强制刷新(Ctrl+F5)
 
-![collection](/images/java-collection.png)
+> - 页面强制刷新不用缓存
+
+
+- 参考博文：
+- 1.[HTTP请求中的缓存(cache)机制 ](http://blog.chinaunix.net/uid-11639156-id-3214858.html)
+- 2.[]()

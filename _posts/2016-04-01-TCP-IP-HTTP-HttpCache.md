@@ -47,7 +47,6 @@ Http缓存及实现原理、 Fiddler：http调试工具
 ```
 
 > 其中：
-
 > 1. Last-Modified      // 指示最后修改的时间
 > 2. Etag                // 指示资源的状态唯一标识
 > 3. Expires             // 指示资源在浏览器缓存中的过期时间
@@ -96,6 +95,17 @@ Http缓存及实现原理、 Fiddler：http调试工具
 
 > - 页面强制刷新不用缓存
 
+-  Http中缓存相关字段：
+
+> - Pragma：如 Pragma:no-cache (禁止缓存)。在HTTP/1.1协议中，它的含义和Cache- Control:no-cache相同
+> - Expires:文件在本地缓存的过期时间.如果浏览器发现缓存中的文件没有过期，则不发送请求(强制刷新例外)
+> - Cache-Control：指定请求和响应遵循的缓存机制.请求机制：包括缓存指令包括，no-cache、no-store、max-age、 max-stale、min-fresh、only-if-cached；响应消息中的指令包括public、private、no-cache、no- store、no-transform、must-revalidate、proxy-revalidate、max-age
+> - Etag / If-None-Match: 验证文件实体的标记
+> - - Etag:值默认是对文件的索引节（INode），大小（Size）和最后修改时间（MTime）进行Hash后得到的
+> - Last-Modified/If-Modified-Since:验证文件的修改时间的响应/请求头
+> - - Expires、Cache-Control、Last-Modified、ETag是RFC 2616（HTTP/1.1）协议中和网页缓存相关的几个字段。 前两个用来控制缓存的失效日期，浏览器可通过它来判定，需不需要发出HTTP请求； 后两个用来验证网页的有效性，服务器端利用它来验证这个文件是否需要重新返回
+> > - Last-Modified VS Etag
+> > - 既然有了Last-Modified，为什么还要用ETag字段呢？因为如果在一秒钟之内对一个文件进行两次更改，Last-Modified就会不正确。因此，HTTP/1.1利用Entity Tag头提供了更加严格的验证
 
 - 参考博文：
 - 1.[HTTP请求中的缓存(cache)机制 ](http://blog.chinaunix.net/uid-11639156-id-3214858.html)

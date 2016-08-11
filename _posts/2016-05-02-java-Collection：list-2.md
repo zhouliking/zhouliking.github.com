@@ -24,7 +24,6 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 ##### 二叉排序树(BST树)
 
 - 二叉排序树又叫二叉查找树（BSTBinary Sort Tree）
-
 1. 所有非叶子结点至多拥有两个儿子（Left和Right）；
 2. 所有结点存储一个关键字
 3. 左小右大：`左 < 中 < 右`,***BST的中序遍历必定是严格递增的***
@@ -66,6 +65,7 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 - `必须有比较器`，查询，更新都有比较操作
 
 - 1. TreeMap属性（4个）
+
 ```java
 	private final Comparator<? super K> comparator; //比较器
 	private transient Entry<K,V> root = null;  //树根
@@ -74,6 +74,7 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 ```
 
 - 2. TreeMap构造器
+
 ```java
 	public TreeMap() {
 		comparator = null;
@@ -84,6 +85,7 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 ```
 
 - 3. TreeMap的Entry节点 (6个属性)
+
 ```java
 	tatic final class Entry<K,V> implements Map.Entry<K,V> {
 		K key;
@@ -98,9 +100,8 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 - 4. TreeMap的特点
 1. TreeMap：允许空值，key不可以为空，线程不安全
 2. 必有比较器
-3. 遍历TreeMap得到的结果集是有序的(中序遍历)
+3. TreeMap`遍历的结果集是有序的`(中序遍历,左 < 中 < 右) 
 4. TreeMap的各项操作的平均时间复杂度为O（logn）
-
 
 ### HashSet 与 HashMap/HashTable
 

@@ -43,7 +43,7 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 
 - AVL是严格平衡树，因此在增加或者删除节点的时候，根据不同情况，旋转的次数比红黑树要多；
 - 红黑是`弱平衡`的，用非严格的平衡来换取增删节点时候旋转次数的降低;
-- 红黑树与AVL树的查询和更新的时间复杂度为`均为O(logn)`
+
 
 - 搜索的次数远大于插入和删除，那么选择AVL树
 - 如果搜索，插入删除次数几乎差不多，应该选择红黑树（RB树）
@@ -55,6 +55,11 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 > 3 每个叶结点，即空结点（NIL）是黑的
 > 4 若一个结点为红色，则其子结点为黑色
 > 5 每个叶结点到根结点的路径中黑色结点的数目一致（黑高度相同）
+
+- 红黑树与AVL树优点：
+1. 的查询和更新的时间复杂度为`均为O(logn)`
+- 红黑树与AVL树缺点：
+1. 插入、删除添加了额外的操作，着色、旋转 操作对其进行修复平衡
 
 
 ### HashSet 与 HashMap/HashTable

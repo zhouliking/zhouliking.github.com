@@ -27,9 +27,7 @@ HTTP特点、协议报文、请求方法、状态码
 
 > HTTP请求报文三部分组成：`请求行`、`请求头`、空行、请求体`正文`
 
-<div align=center>
 ![HTTP_Request](/images/httprequest.png)
-</div>
 
 ```
 	GET  /?a=1&b=3  HTTP/1.1

@@ -27,25 +27,24 @@ Java同步辅助类源码分析-Semaphore
 
 #### 源码原理分析：
 
-Semaphore内部主要通过AQS（AbstractQueuedSynchronizer）实现线程的管理。
-Semaphore构造函数中，参数permits表示许可数，它最后传递给了AQS的state值。
-线程在运行时首先获取许可，如果成功，许可数就减1，线程运行，当线程运行结束就释放许可，许可数就加1。
-如果许可数为0，则获取失败，线程位于AQS的等待队列中，它会被其它释放许可的线程唤醒。
+- Semaphore内部主要通过AQS（AbstractQueuedSynchronizer）实现线程的管理。
+> Semaphore构造函数中，参数permits表示许可数，它最后传递给了AQS的state值。线程在运行时首先获取许可，如果成功，许可数就减1，线程运行，当线程运行结束就释放许可，许可数就加1。如果许可数为0，则获取失败，线程位于AQS的等待队列中，它会被其它释放许可的线程唤醒。
 
 #### 源码分析：
 
-Semaphore两个构造函数：
-非公平：是指在获取许可时先尝试获取许可，而不关心等待队列中是否有线程需要获取许，如果获取失败，才会入列。
-而公平的信号量：在获取许可时首先要查看等待队列中是否已有线程，如果有则入列。
-​      
-1.非公平，传入n个，允许进入资源的线程
+- Semaphore两个构造函数：
+
+> 非公平：是指在获取许可时先尝试获取许可，而不关心等待队列中是否有线程需要获取许，如果获取失败，才会入列。
+> 而公平的信号量：在获取许可时首先要查看等待队列中是否已有线程，如果有则入列。
+ 
+1. 非公平，传入n个，允许进入资源的线程
 
 ```java
           public Semaphore(int permits) {
             sync = new NonfairSync(permits);
           }
 ```
-2.公平
+2. 公平
 
 ```java
           public Semaphore(int permits, boolean fair) {

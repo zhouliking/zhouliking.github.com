@@ -38,6 +38,7 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 > 1. 1.是二BST树,左小右大
 > 2. 2.左右子树深度之差的绝对值不超过1
 > 3. 3.左右子树仍然为平衡二叉树
+
 - 平衡因子BF=左子树深度－右子树深度 (平衡因子只能是1，0，-1)]
 
 ##### 3.红黑树（RB树）
@@ -88,6 +89,7 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 ```
 
 - 3. TreeMap的Entry节点 (6个属性)
+
 ```java
 	tatic final class Entry<K,V> implements Map.Entry<K,V> {
 		K key;
@@ -99,13 +101,28 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 		//...
 	}
 ```
-- 4. TreeMap的特点
-1. TreeMap：允许空值，key不可以为空，线程不安全
-2. 必有比较器
-3. TreeMap`遍历的结果集是有序的`(中序遍历,左 < 中 < 右) 
-4. TreeMap的各项操作的平均时间复杂度为O（logn）
 
+- 4. TreeMap的特点
+
+> 1. 1.TreeMap：允许空值，key不可以为空，线程不安全
+> 2. 2.必有比较器
+> 3. 3.TreeMap`遍历的结果集是有序的`(中序遍历,左 < 中 < 右) 
+> 4. 3.TreeMap的各项操作的平均时间复杂度为O（logn）
+
+#### TreeSet`不可重复`,`有序`,`底层是TreeMap(红黑树)` ,必须要比较器
+
+```java
+	public TreeSet() {
+		this(new TreeMap<E,Object>());
+	}
+	public TreeSet(Comparator<? super E> comparator) {
+		this(new TreeMap<>(comparator));
+	}
+```
 ### HashSet 与 HashMap/HashTable
 
+> 存入对象时，`需要重写hashCode() 与 equals() 方法`
+
+ 
 
 

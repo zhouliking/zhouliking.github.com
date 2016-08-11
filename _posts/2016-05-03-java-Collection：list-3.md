@@ -69,7 +69,7 @@ HashSet(LinkedHashSet)、HashMap(LinkedHashMap)、HashTable
 > 3. 3.HashMap的底层主要是：`Entry数组`，`链表`(解决hash冲突)。
 > 4. 4.Entry对象： key , value, next，其中next也是一个Entry对象，解决hash冲突的，形成一个链表。
 
-###### hashMap参数
+- HashMap参数
 
 ```java
 	transient Entry[] table; 

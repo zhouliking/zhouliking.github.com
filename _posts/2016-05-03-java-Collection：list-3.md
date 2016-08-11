@@ -29,137 +29,59 @@ HashSet(LinkedHashSet)、HashMap(LinkedHashMap)、HashTable
 ### HashSet 与 HashMap
 
 > 1.Hash结构的，存入对象时，`需要重写hashCode() 与 equals() 方法 `
-> 2.Object中默认的 hashCode()方法，仅仅对引用
-
-#### 红黑树
-
-##### 1.二叉排序树(BST树)
-
-- 二叉排序树又叫二叉查找树（BSTBinary Sort Tree）
-
-> 1. 1.所有非叶子结点至多拥有两个儿子（Left和Right）；
-> 2. 2.所有结点存储一个关键字
-> 3. 3.左小右大：`左 < 中 < 右`,***BST的中序遍历必定是严格递增的***
-> 4. 4.二叉排序树各项操作的平均时间复杂度为O(logn),但是最坏情况下，二叉排序树会退化成单链表,复杂度为O(n)
-
-- BST树的搜索，从根结点开始，如果查询关键字比结点关键字小，就进入左儿子；如果比结点关键字大，就进入右儿子；如果左儿子或右儿子的指针为空，则报告找不到相应的关键字；
-- 如果BST树的所有非叶子结点的左右子树的结点数目均保持差不多（平衡），那么B树的搜索性能逼近二分查找；但它比连续内存空间的二分查找的优点是，改变BST树结构（插入与删除结点）不需要移动大段的内存数据，甚至通常是常数开销.
-
-##### 2.平衡二叉查找树（AVL树）
-
-> 1. 1.是二BST树,左小右大
-> 2. 2.左右子树深度之差的绝对值不超过1
-> 3. 3.左右子树仍然为平衡二叉树
-
-- 平衡因子BF=左子树深度－右子树深度 (平衡因子只能是1，0，-1)]
-
-##### 3.红黑树（RB树）
-
-- AVL是严格平衡树，因此在增加或者删除节点的时候，根据不同情况，旋转的次数比红黑树要多；
-- 红黑是`弱平衡`的，用非严格的平衡来换取增删节点时候旋转次数的降低;
-
-
-- 搜索的次数远大于插入和删除，那么选择AVL树
-- 如果搜索，插入删除次数几乎差不多，应该选择红黑树（RB树）
-
-- 红黑树：含五个域，color，key，left，right，p
-- 红黑树满足五条性质：
-
-> 1. 1.每个结点要么是红的，要么是黑的。
-> 2. 2.根结点是黑的
-> 3. 3.每个叶结点，即空结点（NIL）是黑的
-> 4. 4.若一个结点为红色，则其子结点为黑色
-> 5. 4.每个叶结点到根结点的路径中黑色结点的数目一致（黑高度相同）
-
-- 红黑树与AVL树优点：
-1. 的查询和更新的时间复杂度为`均为O(logn)`
-- 红黑树与AVL树缺点：
-1. 插入、删除添加了额外的操作，着色、旋转 操作对其进行修复平衡
-
-#### TreeMap
-- `TreeMap是红黑树实现`
-- `必须有比较器`，查询，更新都有比较操作
-
-- 1. TreeMap属性（4个）
+> 2.Object中默认的 hashCode()方法，`仅仅对引用去hash值`，因此，需要重写hashCode()
 
 ```java
-	private final Comparator<? super K> comparator; //比较器
-	private transient Entry<K,V> root = null;  //树根
-	private transient int size = 0; 
-	private transient int modCount = 0;
-```
+	public class Object {
 
-- 2. TreeMap构造器
+		protected native Object clone() throws CloneNotSupportedException;
 
-```java
-	public TreeMap() {
-		comparator = null;
-	}
-	public TreeMap(Comparator<? super K> comparator) {
-		this.comparator = comparator;
-	}
-```
+		public native int hashCode();
 
-- 3. TreeMap的Entry节点 (6个属性)
-
-```java
-	tatic final class Entry<K,V> implements Map.Entry<K,V> {
-		K key;
-		V value;
-		Entry<K,V> left = null;
-		Entry<K,V> right = null;
-		Entry<K,V> parent;      父节点
-		boolean color = BLACK;  默认颜色
+		public boolean equals(Object obj) {
+			return (this == obj);
+		}
 		//...
 	}
 ```
 
-- 4. TreeMap的特点
+##### HashSet
 
-> 1. 1.TreeMap：允许空值，key不可以为空，线程不安全
-> 2. 2.必有比较器
-> 3. 3.TreeMap`遍历的结果集是有序的`(中序遍历,左 < 中 < 右) 
-> 4. 3.TreeMap的各项操作的平均时间复杂度为O（logn）
-
-#### TreeSet`不可重复`,`有序`,`底层是TreeMap(红黑树)` ,必须要比较器
+> HashSet:底层HashMap实现
 
 ```java
-	public TreeSet() {
-		this(new TreeMap<E,Object>());//直接new了一个TreeMap对象
-	}
-	public TreeSet(Comparator<? super E> comparator) {
-		this(new TreeMap<>(comparator));
-	}
-```
-
-#### 比较器Comparable/Comparator
-
-> 添加多个对象时必须实现比较功能：不然会有java.lang.ClassCastException异常 
->  (只存放一个对象，不会有异常)。Jdk中很多类均实现了比较器，如String，Integer
-
-- 1.类，实现Comparable接口，重写方法：compareTo(Object o)
-
-```java
-	class Person implements Comparable{
-		public int compareTo(Object o) {				
-			return 0 -1 1;
+	public class HashSet<E>
+		extends AbstractSet<E>
+		implements Set<E>, Cloneable, java.io.Serializable
+	{
+		public HashSet() {
+			map = new HashMap<>();
 		}
+		//...
 	}
 ```
 
-- 2.编写比较器，实现Comparator接口，重写compare(Object, Object)
+##### HashMap
+
+> 1. 1.非线程安全，不同步  `HashTable线程安全`
+> 2. 2.允许key与value 均为null 值
+> 3. 3.HashMap的底层主要是：`Entry数组`，`链表`(解决hash冲突)。
+> 4. 4.Entry对象： key , value, next，其中next也是一个Entry对象，解决hash冲突的，形成一个链表。
+
+###### hashMap参数
 
 ```java
-	Comparator<Person> myComparator = new Comparator<Person>() {
-		public int compare(Person p1, Person p2) {
-			return 0 -1 1;
-		}
-	};
-	//然后.set的构造器中传入比较器
-	TreeSet<Person> tree = new TreeSet<>(myComparator);
+	transient Entry[] table; 
+	transient int size;
+	int threshold; //临界值: 超过临界值时，会进行扩容threshold = 加载因子*容量
+	final float loadFactor; //加载因子: 默认0.75f  默认容量为 16
+	transient int modCount; //被修改的次数
 ```
-
-
+> 1. 加载因子
+> 加载因子越大,填满的元素越多,好处是,空间利用率高了,但冲突的机会加大了.链表长度会越来越长,查找效率降低。加载因子越小,填满的元素越少,好处是:冲突的机会减小了,但:空间浪费多了.表中的数据将过于稀疏（很多空间还没用，就开始扩容了）
+> 冲突的机会越大,则查找的成本越高
+> 因此,必须在 "冲突的机会"与"空间利用率"之间寻找一种平衡与折衷. 这种平衡与折衷本质上是数据结构中有名的"时-空"矛盾的平衡与折衷.
+> - 如果机器内存足够，并且想要提高查询速度的话可以将加载因子设置小一点；相反如果机器内存紧张，并且对查询速度没有什么要求的话可以将加载因子设置大一点。不过一般我们都不用去设置它，让它取默认值0.75就好了。
 
  
 

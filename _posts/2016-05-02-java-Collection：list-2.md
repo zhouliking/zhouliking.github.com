@@ -118,7 +118,9 @@ TreeSet、TreeMap、AVL树、红黑树、Comparable/Comparator
 > 3. 3.TreeMap`遍历的结果集是有序的`(中序遍历,左 < 中 < 右) 
 > 4. 3.TreeMap的各项操作的平均时间复杂度为O（logn）
 
-#### TreeSet`不可重复`,`有序`,`底层是TreeMap(红黑树)` ,必须要比较器
+#### TreeSet
+
+> TreeSet `不可重复`,`有序`,`底层是TreeMap(红黑树)` ,必须要比较器
 
 ```java
 	public TreeSet() {

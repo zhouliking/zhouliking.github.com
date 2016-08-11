@@ -47,6 +47,7 @@ Http缓存及实现原理、 Fiddler：http调试工具
 ```
 
 > 其中：
+
 > 1. Last-Modified      // 指示最后修改的时间
 > 2. Etag                // 指示资源的状态唯一标识
 > 3. Expires             // 指示资源在浏览器缓存中的过期时间

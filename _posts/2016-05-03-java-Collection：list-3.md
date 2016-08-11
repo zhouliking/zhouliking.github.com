@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "JAVA集合List、Set、Map功能与源码分析（2）"
+title:  "JAVA集合List、Set、Map功能与源码分析（3）"
 date:  2016-05-03
 categories: JAVA
 ---
@@ -16,11 +16,12 @@ HashSet(LinkedHashSet)、HashMap(LinkedHashMap)、HashTable
 
 > 1. Set接口：Set单列集合、无序、不可重复 
 > 2. 实现类TreeSet , HashSet (子类LinkedHashSet)          
-> 
+> 5. 
 > 3. Map接口：双列集合
 > 4. 实现类TreeMap , HashMap (子类LinkedHashMap)、Hashtable 
 
 - `注意`：
+
 >  1. 1.遍历 Tree结构：TreeSet/TreeMap时，是按照比较器顺序输出的
 >  2. tree结构的`必须实现比较功能`,不然会有java.lang.ClassCastException异常
 >  3. 存放一个对象，不会有异常.JDK中很多类均实现了比较器，如String，Integer

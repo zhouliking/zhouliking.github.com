@@ -104,8 +104,8 @@ Http缓存及实现原理、 Fiddler：http调试工具
 > - - Etag:值默认是对文件的索引节（INode），大小（Size）和最后修改时间（MTime）进行Hash后得到的
 > - Last-Modified/If-Modified-Since:验证文件的修改时间的响应/请求头
 > - - Expires、Cache-Control、Last-Modified、ETag是RFC 2616（HTTP/1.1）协议中和网页缓存相关的几个字段。 前两个用来控制缓存的失效日期，浏览器可通过它来判定，需不需要发出HTTP请求； 后两个用来验证网页的有效性，服务器端利用它来验证这个文件是否需要重新返回
-> > - Last-Modified VS Etag
-> > - 既然有了Last-Modified，为什么还要用ETag字段呢？因为如果在一秒钟之内对一个文件进行两次更改，Last-Modified就会不正确。因此，HTTP/1.1利用Entity Tag头提供了更加严格的验证
+> - - Last-Modified VS Etag
+> - - 既然有了Last-Modified，为什么还要用ETag字段呢？因为如果在一秒钟之内对一个文件进行两次更改，Last-Modified就会不正确。因此，HTTP/1.1利用Entity Tag头提供了更加严格的验证
 
 - 参考博文：
 - 1.[HTTP请求中的缓存(cache)机制 ](http://blog.chinaunix.net/uid-11639156-id-3214858.html)

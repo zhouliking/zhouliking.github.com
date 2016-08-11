@@ -49,6 +49,7 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 
 - 红黑树：含五个域，color，key，left，right，p
 - 红黑树满足五条性质：
+
 > 1. 每个结点要么是红的，要么是黑的。
 > 2. 根结点是黑的
 > 3 每个叶结点，即空结点（NIL）是黑的

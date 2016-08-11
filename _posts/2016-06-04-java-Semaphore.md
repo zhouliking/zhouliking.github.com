@@ -37,14 +37,14 @@ Java同步辅助类源码分析-Semaphore
 > 非公平：是指在获取许可时先尝试获取许可，而不关心等待队列中是否有线程需要获取许，如果获取失败，才会入列。
 > 而公平的信号量：在获取许可时首先要查看等待队列中是否已有线程，如果有则入列。
  
-1. 非公平，传入n个，允许进入资源的线程
+- 1. 非公平，传入n个，允许进入资源的线程
 
 ```java
           public Semaphore(int permits) {
             sync = new NonfairSync(permits);
           }
 ```
-2. 公平
+- 2. 公平
 
 ```java
           public Semaphore(int permits, boolean fair) {

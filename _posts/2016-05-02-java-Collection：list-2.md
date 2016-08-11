@@ -24,6 +24,7 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 ##### 二叉排序树(BST树)
 
 - 二叉排序树又叫二叉查找树（BSTBinary Sort Tree）
+
 1. 所有非叶子结点至多拥有两个儿子（Left和Right）；
 2. 所有结点存储一个关键字
 3. 左小右大：`左 < 中 < 右`,***BST的中序遍历必定是严格递增的***
@@ -39,6 +40,7 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 - 平衡因子BF=左子树深度－右子树深度 (平衡因子只能是1，0，-1)]
 
 ##### 红黑树（RB树）
+
 - AVL是严格平衡树，因此在增加或者删除节点的时候，根据不同情况，旋转的次数比红黑树要多；
 - 红黑是`弱平衡`的，用非严格的平衡来换取增删节点时候旋转次数的降低;
 - 红黑树与AVL树的查询和更新的时间复杂度为`均为O(logn)`
@@ -49,13 +51,12 @@ TreeSet、HashSet(LinkedHashSet)；TreeMap、HashMap(LinkedHashMap)、HashTable
 - 红黑树：含五个域，color，key，left，right，p
 - 红黑树满足五条性质：
 > 1. 每个结点要么是红的，要么是黑的。
-> 2 . 根结点是黑的
+> 2. 根结点是黑的
 > 3 每个叶结点，即空结点（NIL）是黑的
 > 4 若一个结点为红色，则其子结点为黑色
 > 5 每个叶结点到根结点的路径中黑色结点的数目一致（黑高度相同）
 
-2. 红黑树在二叉排序树的基础上，对其增加了一系列约束，使得其尽可能地平衡， 。
-- 红黑树（Red Black Tree）： 是一种自平衡***二叉查找树***
+
 ### HashSet 与 HashMap/HashTable
 
 

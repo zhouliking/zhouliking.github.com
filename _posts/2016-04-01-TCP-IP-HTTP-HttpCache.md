@@ -2,7 +2,7 @@
 layout: post
 title:  "Http缓存及实现原理"
 date:  2016-04-01
-categories: TCP/IP/HTTP
+categories: NetProtocol
 ---
 
 Http缓存及实现原理、 Fiddler：http调试工具

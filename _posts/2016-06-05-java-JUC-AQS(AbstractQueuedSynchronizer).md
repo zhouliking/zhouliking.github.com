@@ -20,7 +20,7 @@ java.util.concurrent的基础。J.U.C中宣传的封装良好的同步工具
      package java.util.concurrent.locks;
 
      public abstract class AbstractQueuedSynchronizer
-               extends AbstractOwnableSynchronizer  implements java.io.Serializable {
+              extends AbstractOwnableSynchronizer  implements java.io.Serializable {
       //....         
     }
 ```

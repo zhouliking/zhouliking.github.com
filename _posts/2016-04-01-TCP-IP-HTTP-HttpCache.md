@@ -2,7 +2,7 @@
 layout: post
 title:  "Http缓存及实现原理"
 date:  2016-04-01
-categories: JAVA
+categories: TCP/IP/HTTP
 ---
 
 Http缓存及实现原理、 Fiddler：http调试工具
@@ -78,5 +78,18 @@ Http缓存及实现原理、 Fiddler：http调试工具
 ```
 
 > 6. 如果服务器经过匹配发现文件修改过了，就会将文件资源返回，并带上新文件状态信息。
+
+- 页面刷新
+
+```
+	If-Modified-Since   Wed, 18 Nov 2009 15:54:52 GMT
+	If-None-Match   ”2360492659″
+	Pragma: no-cache    // 禁止缓存
+	FF:
+	If-Modified-Since   Wed, 18 Nov 2009 15:54:52 GMT
+	If-None-Match   ”2360492659″
+	Cache-Control   max-age=0   // 文件立即过期
+```
+
 
 ![collection](/images/java-collection.png)

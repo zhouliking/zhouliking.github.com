@@ -10,7 +10,7 @@ categories: Algorithm
 ---
 
 - 目录
-  {:toc}
+{:toc}
 
 #### 递归讲解
 

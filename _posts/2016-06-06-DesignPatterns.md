@@ -89,55 +89,46 @@ categories: DesignPattern
 
 - 代理使用场景：
 
-- 核心业务方法前后做一些你所想做的 *辅助工作*，如log日志，安全检查机制
-- 在RPC项目中，消费者调用服务端方法时，直接返回代理对象，在invoke方法中，完成对远程对象创建，初始化赋值，客户端初始化，根据ip，端口连接到服务端，返回服务端传回的结果
-
+- 核心业务方法*前后*做一些你所想做的 *辅助工作*，如log日志，安全检查机制
 
 ```java
-helloService = rpcProxy.create(HelloService.class)
-result = helloService.hello("World"); 就是invoke的返回值
+	helloService = rpcProxy.create(HelloService.class)
+	result = helloService.hello("World"); //结果为invoke()的返回值
 
 ```
 
 #### Observer观察者（发布-订阅模式）
 
-##### 功能：
+- 功能：
 
-- 一对多的依赖关系，当一对象发生改变时，所有依赖的对象都将被通知自动更新
+> 一对多的依赖关系，当一对象发生改变时，所有依赖的对象都将被通知自动更新
 
-##### 流程：
+- 流程：
 
-- 一个subject目标对象可以有多个Observer，
-- subject目标对象提供对观察者的注册，退订、维护。并通知所有的Observer其变化
-- Observer依赖于目标对象，观察者均继承一个接口。从而subject中具体观察者对象解耦。（松耦合）
+> 一个subject目标对象可以有多个Observer，
+> subject目标对象提供对观察者的注册，退订、维护。并通知所有的Observer其变化
+> Observer依赖于目标对象，观察者均继承一个接口。从而subject中具体观察者对象解耦。（松耦合）
 
-##### 观察者模式实现：
+- 观察者模式实现：
 
-观察者订阅时，存入list，被观察者变动消息时，遍历list即可
+> - 观察者订阅时，存入list，被观察者变动消息时，遍历list即可
 
-##### Java内置观察者： 
+- Java内置观察者： 
 
-- 目标被观察者：java.util.Observable类内置了注册、通知等方法
-`Observable ob = new Observable();` Observable类，用的时候要调用setChange()，才会通知
+- 目标被观察者：java.util.Observable类内置了注册、通知等方法`Observable ob = new Observable();` Observable类，用的时候要调用setChange()，才会通知
 - 观察者：java.util.Observer接口
 
-##### RPC项目中：
+- 代理使用场景：
 
-- 服务提供者在在zk上创建服务临时节，消费者获取zk上节点，然后watch监听该节点变化。
-
-##### Web项目中：
-
-- 发布消息，需要notifyAll观察者。发布消息的人（被观察者），发布消息，可遍历所有观察者的list，然后依次通知，（发邮件javaMail
+> - 发布消息，需要notifyAll观察者。发布消息的人（被观察者），发布消息，可遍历所有观察者的list，然后依次通知，（发邮件javaMail
 
 #### TemplateMethod模板方法（用的抽象类，提供公共功能）
 
-##### 功能：
+- 功能：定义一个算法的骨架(步骤)，将一些实现步骤延时到子类中。
 
-- 定义一个算法的骨架(步骤)，将一些实现步骤延时到子类中。
+- 好处：
 
-##### 好处：
-
-- 在父类中实现固定不变的， 将变化的然子类实现。实现代码的复用，减少代码冗余
+> 在父类中实现固定不变的， 将变化的然子类实现。实现代码的复用，减少代码冗余
 
 
 ```java

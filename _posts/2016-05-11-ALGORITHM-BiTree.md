@@ -1,18 +1,20 @@
 ---
 layout: post
-title:  "二叉树:建立&遍历&知中序、前序求后续"
-date:  2016-05-13
+title:  "二叉树建立与遍历"
+date:  2016-05-11
 categories: Algorithm
 ---
 
-二叉树:建立&遍历&知中序、前序求后续
+二叉树建立、遍历、知中/前序求后序,知中/后序求前序
 
 ---
 
 - 目录
   {:toc}
 
-#### 二叉树在Java中定义：
+#### 二叉树定义与创建
+
+##### 定义二叉树数据结构
 
 ```java
 class BiTree{  
@@ -23,15 +25,16 @@ class BiTree{
 		this.letf = null;
 		this.right = null;
 		this.data = data;
-		}
-       // …geter/setter
+	}
+    // …geter/setter
 }
 ```
 
-#### 建立二叉树
+##### 建立二叉树
 
 ```java
-static String str = "ab#d##c#e##";
+	static String str = "ab#d##c#e##";
+	
 	public static BiTree craetBiTree(BiTree node){ //创建
 	    char c = str.charAt(i++); 
 		if(c =='#'){
@@ -43,21 +46,28 @@ static String str = "ab#d##c#e##";
 		}
 		return node;	
 	}
-public static void preOderTraverse(BiTree node){ //前序
+```	
+	
+#### 二叉树遍历
+
+##### 递归方式遍历二叉树
+
+```java
+	public static void preOderTraverse(BiTree node){//前序
 		if(node != null){
 			System.out.println(node.getData());
 			preOderTraverse(node.getLetf());
 			preOderTraverse(node.getRight());
 		}
 	}
-	public static void inOderTraverse(BiTree node){// 
+	public static void inOderTraverse(BiTree node){//中序
 		if(node != null){			
 			inOderTraverse(node.getLetf());
 			System.out.println(node.getData());
 			inOderTraverse(node.getRight());
 		}
 	}
-	public static void postOderTraverse(BiTree node){
+	public static void postOderTraverse(BiTree node){//后序
 		if(node != null){			
 			postOderTraverse(node.getLetf());
 			postOderTraverse(node.getRight());
@@ -66,13 +76,17 @@ public static void preOderTraverse(BiTree node){ //前序
 	}
 ```
 
-#### 已知：中序 +前序，求后续（仅反序）：
+#### 二叉树题目
 
-利用前序先出现的为root，不断的将中序分成，root右、左边递归,将root输出
+##### 已知中+前序，求后续
+
+- 思路：
+
+> 不断的输出根节点，利用前序先出现的为root，不断的将中序分成，root右、左边递归,将root输出
+> 输出结果与后序相反
 
 ```java
-	public static void preAndInToPostOder(char mids[],char pres[],
-int start,int end){
+	public static void preAndInToPostOder(char mids[],char pres[],int start,int end){
 		int rootIndex=0;
 		if(start>end)
 			return;
@@ -91,13 +105,15 @@ int start,int end){
 	}
 ```
 
-#### 已知：中序 +后序，求前续：
+##### 已知：中序 +后序，求前续：
 
-反向取出后序点，极为root节点，然后在中序中寻找，将中序分成，root左，右边依次遍历
+- 思路：
+
+> 不断的输出根节点，反向取出后序点，极为root节点，然后在中序中寻找，将中序分成，root左，右边依次遍历
+> 输出结果即为前序
 
 ```java
-public static void postAndInToPreOder(char mids[],char post[],
-int start,int end){
+	public static void postAndInToPreOder(char mids[],char post[],int start,int end){
 		int rootIndex=0;
 		if(start>end)
 			return;

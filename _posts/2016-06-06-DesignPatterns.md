@@ -130,32 +130,19 @@ categories: DesignPattern
 
 > 在父类中实现固定不变的， 将变化的然子类实现。实现代码的复用，减少代码冗余
 
-
 ```java
-abstract class AbstractClass{
-	   public abstract void mehtod1();
-	   public abstract void mehtod2();
-	   public abstract void mehtod3();	   
-	   public void TemplateMethod(){ 固定的骨架(步骤)
-		   mehtod1();
-		   mehtod2();
-		   //......
-		   mehtod3();
-           }	   
-}
+	abstract class AbstractClass{
+		   public abstract void mehtod1();
+		   public abstract void mehtod2();
+		   public abstract void mehtod3();	   
+		   public void TemplateMethod(){ 固定的骨架(步骤)
+			   mehtod1();
+			   mehtod2();
+			   //......
+			   mehtod3();
+			   }	   
+	}
 ```
-##### NettyNIO简易实现中用到了模板模式：
-
-- 简易实现中创建了Work 与Boss功能，boss：完成监听端口 Accept事件，将新窗口其他事件，给worker处理；而work处理READ | WRITE等事件
-- 由于work与boss有公共属性线程池Executor、选择器Selector、任务队列 Queue等；公共的方法，与固定的处理流程
-
-
-```java
-select(selector); 调用boss/worder的select(),阻塞/睡眠	
-processTaskQueue();取出任务队列中的线程，然后task.run()
-process(selector); 调用boss/worder
-```
-- 因此，可让work 与 boss实现类继承这个抽象类
 
 #### Prototype原型模式
 

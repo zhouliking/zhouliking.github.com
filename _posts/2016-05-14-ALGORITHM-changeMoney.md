@@ -77,7 +77,8 @@ public class Main {
 		if (n == 1 || n == 0 || index == 0) {
 			return 1;
 		}
-	  return ChangeMoney(moneys, n - moneys[index], index) + ChangeMoney(moneys, n, index - 1);
+	  return ChangeMoney(moneys, n - moneys[index], index) 
+							+ ChangeMoney(moneys, n, index - 1);
 	}
 }
 ```

@@ -19,7 +19,7 @@ categories: Algorithm
 > 1. 1）有反复执行的过程（调用自身）
 > 2. 2）有跳出反复执行过程的条件（递归出口）
 
-#### 换钱币问题
+#### 换钱币问题分析
 
 ##### 题目
 
@@ -39,6 +39,8 @@ categories: Algorithm
 >  总钱数 = 含有当前比值的所有数目 + 不含当前比值的所有数目
 >  moneys = {1,2}
 >  f(n) = f(n - moneys[i], i) + f(n, i-1)
+
+##### 代码实现
 
 ```java
 import java.util.Scanner;
@@ -67,7 +69,6 @@ public class Main {
 		}
 
 	}
-
 	// 递归
 	public static int ChangeMoney(int moneys[], int n, int index) {
 		if (n < 0 || index < 0) {
@@ -76,7 +77,7 @@ public class Main {
 		if (n == 1 || n == 0 || index == 0) {
 			return 1;
 		}
-		return ChangeMoney(moneys, n - moneys[index], index) + ChangeMoney(moneys, n, index - 1);
+	  return ChangeMoney(moneys, n - moneys[index], index) + ChangeMoney(moneys, n, index - 1);
 	}
 }
 ```

@@ -14,8 +14,6 @@ TreeSet、TreeMap、AVL树、红黑树、Comparable/Comparator
 
 ### Set、Map
 
-### Set、Map
-
 > 1. Set接口：Set单列集合、无序、不可重复 
 > 2. 实现类TreeSet , HashSet (子类LinkedHashSet)          
 

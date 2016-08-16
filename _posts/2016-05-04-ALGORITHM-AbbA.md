@@ -28,7 +28,7 @@ categories: Algorithm
 [manacher1](/images/manacher1.png)
 
 
-- 情况二: p[i+k] = p[i]-k;不可能比这个更长
+- 情况二: p[i+k] = p[i-k];不可能比这个更长
 
 [manacher1](/images/manacher2.png)
 
@@ -38,9 +38,9 @@ categories: Algorithm
 
 ##### 算法公式
 
-- 公式：
+- 上述三种情况整理得公式：
 
-> 1. 1.
+> 1. 1.p[i+k] = min(p[i-k],p[i]-k);
 > 2. 2.
 
 - 问题：由于p[i]是回文串中心字符，不可能为空，则，需要把偶数串变成奇数长串
@@ -52,10 +52,6 @@ categories: Algorithm
 ### 实现代码
 
 ```java
-      public static void sort(int a[]) {
-    	  for(int i=a.length-1;i>=0;i--){
-    		  	buildMinHeap(a,i+1);
-    		  	int temp=a[0]; a[0]=a[i]; a[i]=temp;
-    	   }			
-      }
+     
+	 
 ```

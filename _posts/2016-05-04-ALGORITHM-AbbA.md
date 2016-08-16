@@ -25,16 +25,17 @@ categories: Algorithm
 
 
 - 情况一: p[i+k] = p[i]-k; 不可能比这个更长
-[manacher1](/images/manacher1.png)
+
+![manacher1](/images/manacher1.png)
 
 
 - 情况二: p[i+k] = p[i-k];不可能比这个更长
 
-[manacher1](/images/manacher2.png)
+![manacher1](/images/manacher2.png)
 
 - 情况三：p[i+k] >= p[i-k] 可能继续增长
 
-[manacher1](/images/manacher3.png)
+![manacher1](/images/manacher3.png)
 
 ##### 算法公式
 

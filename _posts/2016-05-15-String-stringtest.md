@@ -19,10 +19,11 @@ categories: String
 
 #### 2.符串全排（无重复）：
 
-Permutation("123".toCharArray(),3,1);
-N个数全排 N! = N*(N-1)*….
-则，第一个位置上n个数有 n种。第二个位置上；剩下的n-1个数，有n-1中
+- 全排思路
 
+> N个数全排 N! = N*(N-1)*…. 则，第一个位置上n个数有 n种。第二个位置上；剩下的n-1个数，有n-1中
+
+> Permutation("123".toCharArray(),3,1);
 
 ```java
 public static void Permutation(char a[],int size,int n){
@@ -66,5 +67,5 @@ public static void Permutation(char a[],int size,int n){
 	}
 ```
 
-海量数据查找---用Hash表，如10亿个Url，查找某个url位置
-Tire数：一百万行文本，统计最频繁出现的前10个词
+> 海量数据查找---用Hash表，如10亿个Url，查找某个url位置
+> Tire数：一百万行文本，统计最频繁出现的前10个词

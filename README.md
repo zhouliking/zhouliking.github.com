@@ -7,7 +7,7 @@
 - Name：ZHOULI
 - School: [UESTC](http://www.uestc.edu.cn/)
 - Major：[Control Science and Engineering](http://baike.baidu.com/view/62820.htm)
-- E-Mail：[uestczhouli](http://weibo.com/zhouli)
+- E-Mail：uestczhouli@163.com
 
 ---
 

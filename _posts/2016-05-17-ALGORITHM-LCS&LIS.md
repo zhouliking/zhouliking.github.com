@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "最长公共子序列(LCS)&最长递增子序列(LIS)小结"
-date:  2016-05-14
+date:  2016-05-17
 categories: Algorithm
 ---
 
@@ -182,4 +182,50 @@ public static void findLCS(String str1,String str2){
 	}
 	System.out.println(commonStr);
 }
+```
+
+### 应用
+
+#### 1.LIS合唱队排序
+
+- LIS最长递增子序列
+
+> 题目(华为机试)：N位同学站成一排，音乐老师要请其中的(N-K)位同学出列，使得剩下的K位同学排成合唱队形。合唱队形是指这样的一种队形：设K位同学从左到右依次编号为1，2…，K，他们的身高分别为T1，T2，…，TK，   则他们的身高满足存在i（1<=i<=K）使得Ti<T2<......<Ti-1<Ti>Ti+1>......>TK。 你的任务是，已知所有N位同学的身高，计算最少需要几位同学出列，可以使得剩下的同学排成合唱队形。
+
+- 分析
+
+> 矮 -> 高
+
+```java
+	public static int LIS(int a[],int n){
+		int asc[] =  new int[n];
+		int desc[] = new int[n];		
+		
+		//从1-> n 升序 的LCS
+		for(int i=0;i<n;i++){
+			asc[i] = 1;
+			for(int j=0;j<i;j++){
+				if(a[i]>a[j]){
+					asc[i] = Math.max(asc[j]+1,asc[i]);
+				}					
+			}
+		}
+		//从n->1  升序 的LCS
+		for(int i=n-1;i>=0;i--){
+			desc[i] = 1;
+			for(int j=n-1;j>i;j--){
+				if(a[i]>a[j]){
+					desc[i] = Math.max(desc[j]+1,desc[i]);
+				}					
+			}
+		}
+		//两矩阵对应位置，相加 取最大值
+		int max=0;
+		for(int i=0;i<n;i++){
+			if(max<desc[i]+asc[i]){
+				max = desc[i]+asc[i];
+			}
+		}
+		return n-max+1;
+	}
 ```

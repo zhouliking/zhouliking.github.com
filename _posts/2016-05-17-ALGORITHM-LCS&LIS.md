@@ -22,7 +22,7 @@ categories: Algorithm
 
 > 作用：求两个序列的公共的、最长的、子串
 
-- 3.最长公共子序列(LCS) 不连续
+- 3.最长公共子序列(LCS) 不连续 Longest Common Subsequence
 
 > 作用：求两个序列的公共的、最长的、子序列
 
@@ -186,6 +186,16 @@ public static void findLCS(String str1,String str2){
 
 ### 应用
 
+##### 1.LCS应用
+
+> 1. 1:求序列str1 `最长递增子序列`
+
+> 可先将序列排序，得到str2，求str1与str2最长公共子序列即可
+
+> 1. 2.求序列str的 `最大回文序列`
+
+> 先将str反转得到str2求str1与str2最长公共子序列即可
+
 #### 1.LIS合唱队排序
 
 - LIS最长递增子序列
@@ -194,7 +204,7 @@ public static void findLCS(String str1,String str2){
 
 - 分析
 
-> 矮 -> 高
+> 矮 -> 高 <- 矮 
 
 ```java
 	public static int LIS(int a[],int n){

@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "字符串处理：移位&全排&最大子序列"
+title:  "字符串处理：移位.全排"
 date:  2016-05-15
 categories: String
 ---
 
-字符串：移位&全排&最大子序
+字符串：移位&全排
 
 ---
 
@@ -17,28 +17,7 @@ categories: String
 ![1](/images/s1.png)
 ![2](/images/s2.png)
 
-##### LCS（最长公共子序列）:Longest Common Subsequence
-
-![3](/images/s3.png)
-![4](/images/s4.png)
-![5](/images/s5.png)
-
-#### 应用：
-
-##### 1: 求序列str1最长递增子序列:
-
-可先将序列排序，得到str2，
-求str1与str2最长公共子序列即可
-
-##### 2.求序列str的最大回文序列
-
-先将str反转得到str2
-求str1与str2最长公共子序列即可
-
-
-
-
-#### 字符串全排（无重复）：
+#### 2.符串全排（无重复）：
 
 Permutation("123".toCharArray(),3,1);
 N个数全排 N! = N*(N-1)*….
@@ -46,26 +25,31 @@ N个数全排 N! = N*(N-1)*….
 
 
 ```java
-
 public static void Permutation(char a[],int size,int n){
-		if(n==size-1){
-			print(a);			
-			return ;
-		}
-		for(int i=n;i<size;i++){
-			swap(a,i,n);
-			Permutation(a,size,n+1);
-			swap(a,i,n);
-		}
+	if(n==size-1){
+		print(a);			
+		return ;
+	}
+	for(int i=n;i<size;i++){
+		swap(a,i,n);
+		Permutation(a,size,n+1);
+		swap(a,i,n);
+	}
 }
-
 ```
 
-#### 字符串全排（有重复）：
-
+#### 2.字符串全排（有重复）
 
 ```java
-public static void Permutation(char a[],int size,int n){
+	public static boolean isDuplicate(char a[],int n,int i){
+		for(int j=n;j<i;j++){
+			if(a[j] == a[i]){
+				return true;
+			}
+		}
+		return false;
+	}
+	public static void Permutation(char a[],int size,int n){
 		if(n==size-1){
 			print(a);			
 			return ;
@@ -79,8 +63,7 @@ public static void Permutation(char a[],int size,int n){
 			Permutation(a,size,n+1);
 			swap(a,i,n);
 		}
-}
-
+	}
 ```
 
 海量数据查找---用Hash表，如10亿个Url，查找某个url位置

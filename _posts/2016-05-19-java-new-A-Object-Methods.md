@@ -48,7 +48,6 @@ Java创建对象方式：new 、clone、反射、反序列化、Objenesis简介
 
 - jdk中该类库是和java核心类库放在一起的，只是文档少了点
 
-
 - 例: 通过sun.reflect.ReflectionFactory这个类来实例化一个对象，不使用类中的任何构造方法
 
 ```java

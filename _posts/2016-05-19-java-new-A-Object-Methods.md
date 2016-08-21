@@ -83,7 +83,7 @@ public class Main {
 		@SuppressWarnings("unchecked")
 		Constructor<Person> constr = (Constructor<Person>) reflectionFactory
 				.newConstructorForSerialization(Person.class, 
-									Object.class.getConstructor(new Class[0]));
+						Object.class.getConstructor(new Class[0]));
 		Person person = (Person) constr.newInstance(new Object[0]);
 		person.show();
 	}

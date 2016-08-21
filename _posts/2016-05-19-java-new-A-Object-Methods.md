@@ -21,7 +21,6 @@ Java创建对象方式：new 、clone、反射、反序列化、Objenesis简介
 
 > - Objenesis 类没有参数为空的构造方法也可创建
 
-- 本文 Objenesis类，与 
 
 ### Objenesis
 

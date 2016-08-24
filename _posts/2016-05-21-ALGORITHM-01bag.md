@@ -10,7 +10,7 @@ categories: Algorithm
 ---
 
 - 目录
-  {:toc}
+{:toc}
 
 ### 一、基本01背包问题描述
 

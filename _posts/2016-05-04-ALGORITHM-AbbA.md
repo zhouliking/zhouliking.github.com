@@ -59,6 +59,49 @@ categories: Algorithm
 ### 实现代码
 
 ```java
-     
+public class Main {
+	public static void main(String args[]) {
+
+		Scanner sc = new Scanner(System.in);
+
+		while (sc.hasNext()) {
+
+			String str = sc.nextLine();
+			char s[] = new char[str.length() * 2 + 1];
+			int p[] = new int[str.length() * 2 + 1];
+
+			int count = 0;
+			for (int i = 0; i < str.length(); i++) {
+				s[count++] = '#';
+				s[count++] = str.charAt(i);
+			}
+			s[count] = '#';
+
+			int id = 0;
+			int max = 0;
+			int len = str.length() * 2 + 1;
+			int idlen = -1;
+			for (int i = 0; i < len; i++) {
+				if (idlen > i) {//在边界内就，用公式
+					p[i] = Math.min(p[2 * id - i], p[id] - (i - id));
+				} else {
+					p[i] = 1;
+				}
+				//继续两边扩展
+				while (i - p[i]>=0 && i + p[i] < len && s[i - p[i]] == s[i + p[i]]) {
+					p[i]++;
+				}
+				if (idlen < i + p[i]) {//更新边界
+					id = i;
+					idlen = i + p[i];
+				}
+				if (max < p[i]) {//最大串长度： max-1
+					max = p[i];
+				}
+			}
+			System.out.println(max - 1);
+		}
+	}
+} 
 	 
 ```

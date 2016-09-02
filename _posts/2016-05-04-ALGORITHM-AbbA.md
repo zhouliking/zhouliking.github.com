@@ -47,8 +47,8 @@ categories: Algorithm
 
 - 上述三种情况整理得公式：
 
-> 1. 1.当p[i-k] != p[i]-k, p[i+k] = min(p[i-k],p[i]-k);
-> 2. 2.当p[i-k] == p[i]-k,继续向后找,while( s[i+k+p[i+k]] == s[i+k-p[i+k]] ){ p[i+k]++; }
+> 1. 1.当点在，中心点i的范围内时 p[i+k] = min(p[i-k],p[i]-k);
+> 2. 2.直接向两边扩展，while( s[i+p[i+k]] == s[i+-p[i+k]] ){ p[i+k]++; }
 
 - 问题：由于p[i]是回文串中心字符，不可能为空，则，需要把偶数串变成奇数长串
 

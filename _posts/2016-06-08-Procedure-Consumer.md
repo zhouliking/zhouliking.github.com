@@ -17,7 +17,7 @@ categories: DesignPattern
 
 > 生产者消费者问题:是一个著名的线程同步问题，该问题描述如下：有一个生产者在生产产品，这些产品将提供给若干个消费者去消费，为了使生产者和消费者能并发执行，在两者之间设置一个具有多个缓冲区的缓冲池，生产者将它生产的产品放入一个缓冲区中，消费者可以从缓冲区中取走产品进行消费，显然生产者和消费者之间必须保持同步，即不允许消费者到一个空的缓冲区中取产品，也不允许生产者向一个已经放入产品的缓冲区中再次投放产品
 
-### synchronized设计
+### 方案一：synchronized
 
 #### 设计描述
 
@@ -137,7 +137,7 @@ public class Consumer implements Runnable{
 	}
 ```
 
-### Lock同步设计
+### 方案二：Lock
 
 #### 设计描述
 
@@ -272,7 +272,7 @@ public class TestProducerConsumer {
 }
 ```
 
-### Lock同步设计
+### 方案三：同步工具类
 
 #### 设计描述
 
@@ -283,6 +283,6 @@ public class TestProducerConsumer {
 
 #### CountDownLatch设计代码
 
-#### Exchanger
+#### Exchanger设计
 
 

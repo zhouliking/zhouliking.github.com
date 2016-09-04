@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Singleton的写法总结"
-date:  2016-06-08
+date:  2016-05-22
 categories: DesignPattern
 ---
 

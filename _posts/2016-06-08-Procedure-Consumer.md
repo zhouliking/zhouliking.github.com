@@ -5,7 +5,7 @@ date:  2016-06-08
 categories: DesignPattern
 ---
 
-生产者、消费者、Java线程同步方式
+生产者、消费者、线程同步方式,同步类使用
 
 ---
 
@@ -141,10 +141,148 @@ public class Consumer implements Runnable{
 
 #### 设计描述
 
-
+> 1. 利用Java1.5以后的Lock锁机制
+> 2. 用Condition类进行线程同步
+> 3. 注意：await()方法需要处理异常
 
 #### 设计代码
 
+- 消费者、生产者
 
+```java
+/**
+ * EventStorage 消费者、生产者公共区域
+ * 
+ * @author 周力
+ */
+class EventStorage<T> {
+	public int maxSize;
+	public LinkedList<T> buffer;
+	public Lock lock;
+	private Condition condition;
+
+	public EventStorage(int maxSize) {
+		super();
+		this.maxSize = maxSize;
+		buffer = new LinkedList<>();
+		lock = new ReentrantLock();
+		condition = lock.newCondition();
+	}
+
+	public T get() {
+		T result = null;
+		lock.lock();
+		try {
+			if (buffer.size() == 0) {
+				condition.await();
+			}
+			result = buffer.poll();
+			System.out.println("get:" + buffer.size() + " " + result);
+			condition.signalAll();
+
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			lock.unlock();
+		}
+		return result;
+	}
+
+	public void put(T elements) {
+		lock.lock();
+		try {
+			if (buffer.size() == maxSize) {
+				condition.await();
+			}
+			buffer.add(elements);
+			System.out.println("put:" + buffer.size());
+			condition.signalAll();
+
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			lock.unlock();
+		}
+	}
+}
+
+/**
+ * 生产者线程
+ * 
+ * @author 周力
+ */
+class Producer implements Runnable {
+	EventStorage<String> storage;
+
+	public Producer(EventStorage<String> storage) {
+		this.storage = storage;
+	}
+
+	@Override
+	public void run() {
+		for (int i = 0; i < 50; i++) {
+			storage.put("A");
+			//Thread.sleep(10);	
+		}
+	}
+
+}
+
+/**
+ * 消费者线程
+ * 
+ * @author 周力
+ */
+class Consumer implements Runnable {
+	EventStorage<String> storage;
+
+	public Consumer(EventStorage<String> storage) {
+		this.storage = storage;
+	}
+
+	@Override
+	public void run() {
+		for (int i = 0; i < 50; i++) {
+			storage.get();			
+			//Thread.sleep(10);			
+		}
+	}
+}
+```
+
+- 测试
+
+```java
+/**
+ * 测试类
+ * 
+ * @author 周力
+ */
+public class TestProducerConsumer {
+
+	public static void main(String[] args) {
+		EventStorage<String> eventStorage = new EventStorage<>(8);
+		Producer producer = new Producer(eventStorage);
+		Consumer consumer = new Consumer(eventStorage);
+
+		new Thread(producer).start();
+		new Thread(consumer).start();
+
+	}
+}
+```
+
+### Lock同步设计
+
+#### 设计描述
+
+> 利用JUC中提供的同步工具类：Semaphore、CountDownLatch、Exchanger
+
+
+#### Semaphore设计代码
+
+#### CountDownLatch设计代码
+
+#### Exchanger
 
 

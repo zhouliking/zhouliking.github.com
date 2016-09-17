@@ -22,41 +22,49 @@ categories: Algorithm
 ### prim（普里姆)算法
 
 ```java
-public static void prim(int g[][],int n){
-		
-	int index[] = new int[n]; //index[i]:到 i的 起点下标
-	int lowcost[] = new int[n]; //lowcost[i] :得到的最小点集中所有点到i的最小距离
-
-	//任意取一点，取 0 处
+public static int prim(int g[][],int n){
+	
+	//已经找到点集v，lowcost[i],表示 i点到 v集中所有的点的最小权值
+	//由于点集v中的所有点，lowcost[u]=0,表示已经找到，将其去除
+	int lowcost[] = new int[n];
+	
+	//存放到已经找到点集 v的最小值，的坐标
+	int index[] = new int[n]; 
+	
+	int minPathWeight=0;//最短路径权值
+	
+	//任意取一点开始 （取 0 处）
 	for (int i = 0; i < n; i++) {
 		lowcost[i] = g[0][i];
 		index[i] = 0; //初始起点均为 0
 	}
-
 	for (int i = 1; i < n; i++) {
 		int min = Integer.MAX_VALUE;
 
 		int minIndex = 0;
-		for (int j = 1; i < n; j++) { // 遍历lowcost[]
+		for (int j = 1; j < n; j++) { 
+			// 遍历lowcost[]，由于lowcost[j]=0表示已经找出的点，去掉
 			if (lowcost[j] != 0 && min > lowcost[j]) {
 				min = lowcost[j];
 				minIndex = j;
 			}
 		}
-
-		//从 index[minIndex]点   -->  minIndex点
-		System.out.println(index[minIndex]+"->" + minIndex );
-
+		//从 结果：经过的点： 起点 --> 终点		
+		//System.out.println(index[minIndex]+"->" + minIndex );
+		minPathWeight+=g[index[minIndex]][minIndex];
+		
+		//去除这个点
 		lowcost[minIndex] = 0;
 		
-		//因为新加入了点，更新lowcost[]
-		for (int j = 1; i < n; j++) { 
+		//因为新加入了minIndex 点，更新lowcost[]
+		for (int j = 1; j< n; j++) { 
 			if (lowcost[j] != 0 && g[minIndex][j] < lowcost[j]) {
 				lowcost[j] = g[minIndex][j];
 				index[j] = minIndex; //更新起点的下标
 			}
 		}
 	}
+	return minPathWeight;
 }
 ```
 

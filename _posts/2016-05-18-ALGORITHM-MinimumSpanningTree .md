@@ -22,6 +22,7 @@ categories: Algorithm
 ### prim（普里姆)算法
 
 ```java
+//  返回最小生成树的权值
 public static int prim(int g[][],int n){
 	
 	//已经找到点集v，lowcost[i],表示 i点到 v集中所有的点的最小权值

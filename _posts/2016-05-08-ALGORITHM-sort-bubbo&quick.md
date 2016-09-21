@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "7种常见算法实现与分析（冒泡&快速排序）"
+title:  "常见排序算法之 - 冒泡&快速排序"
 date:  2016-05-07
 categories: Algorithm
 ---

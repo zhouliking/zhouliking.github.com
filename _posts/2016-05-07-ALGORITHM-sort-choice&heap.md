@@ -95,7 +95,7 @@ categories: Algorithm
     			 return;
     	  	}
     	  	buildMinHeap(a,n);
-    	  	int temp=a[0]; a[0]=a[n-1]; a[n-1]=temp; 
+    	  	int temp=a[0]; a[0]=a[n-1]; a[n-1]=temp; //
           sort2(a,n-1);		
     	}
 
@@ -103,7 +103,7 @@ categories: Algorithm
       public static void sort(int a[]) {
     	  for(int i=a.length-1;i>=0;i--){
     		  	buildMinHeap(a,i+1);
-    		  	int temp=a[0]; a[0]=a[i]; a[i]=temp;
+    		  	int temp=a[0]; a[0]=a[i]; a[i]=temp;//
     	   }			
       }
 ```

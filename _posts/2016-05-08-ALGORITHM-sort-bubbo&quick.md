@@ -5,39 +5,45 @@ date:  2016-05-07
 categories: Algorithm
 ---
 
-7种常见算法实现与分析（冒泡&快速排序）
+交换排序：冒泡冒泡、快速排序
 
 ---
 
 - 目录
   {:toc}
 
-快速排序与冒泡排序均属于交换排序，即排序过程中通过交换元素顺序使得最终顺序达到我们的要求
+- 快速排序与冒泡排序均属于交换排序，即排序过程中通过交换元素顺序使得最终顺序达到我们的要求
 
 #### 冒泡排序：
 
+- 思想：将相邻的两个数进行，进行比较，不断的将小数/大数下沉
+
+> 1. i 执行范围 [0,n-2]；
+> 2. j 执行范围 [0,n-2]；
+> 3. 每次比较***a[j] 与 a[j+1]***
+
 ```java
-        	public static void bubbleSort(int a[]){
-        		int i,j;
-        		boolean falg=true; //冒泡设置标志位，序列原本	有序时复杂度可为 O(n)
-        		for(i=0;falg && i<a.length-1;i++){
-    				for(j=0;j<a.length-i-1;j++){
-    					falg=false;
-    					if(a[j]>a[j+1]){
-    						falg=true;
-    						int temp=a[j];
-    						a[j]=a[j+1];
-    						a[j+1]=temp;
-    					}
- 	                        }
+	public static void bubbleSort(int a[]){
+		int i,j;
+		boolean falg=true; //冒泡设置标志位，序列原本	有序时复杂度可为 O(n)
+		for(i=0;falg && i<a.length-1;i++){
+		   for(j=0;j<a.length-i-1;j++){
+			falg=false;
+			if(a[j]>a[j+1]){
+				falg=true;
+				int temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
     			}
-        	}
+ 		   }
+		}
+	}
 ```
 
-冒泡排序最坏情况执行次数：(n-1-1)+（n-1-2）+....+1 --> O(n*n)
-冒泡排序最好情况执行次数：n-1 -->O(n)由于设置
-平均时间复杂度 O(n*n)
-​  
+> 1. 冒泡排序最坏情况执行次数：(n-1-1)+（n-1-2）+....+1 --> O(n*n)
+> 2. 冒泡排序最好情况执行次数：n-1 -->O(n)
+> 3. 平均时间复杂度 O(n*n)
+
 
 #### 快速排序：采用分治思想
 
@@ -48,14 +54,14 @@ categories: Algorithm
 #### 快速排序递归写法：
 
 ```java
-   	   public static void sort(int a[], int start, int end) {
-	  		if (end - start < 1) {
-	  			return;
-	  		}
-	  		int mid = sortUnit(a, start, end);
-	  		sort(a, start, mid - 1);
-	  		sort(a, mid + 1, end)
-	    }
+	public static void sort(int a[], int start, int end) {
+		if (end - start < 1) {
+			return;
+		}
+		int mid = sortUnit(a, start, end);
+		sort(a, start, mid - 1);
+		sort(a, mid + 1, end)
+	}
 ```
 
 #### 快速非排序递归写法：非递归可用stack保存状态
@@ -82,39 +88,38 @@ categories: Algorithm
  	 			}
 	  		}
 	  	}
+	  	
  	  //一趟排序，将第一个数作为基准
-
-
  	 public static int sortUnit(int a[], int start, int end) {
-			boolean flag = true;
-			int m = a[start];
-			while (end > start) {
-				if (flag) {
-					if (m > a[end]) {
-						a[start++] = a[end];
-						flag = false;
-					} else {
-						end--;
-					}	
+		boolean flag = true;
+		int m = a[start];
+		while (end > start) {
+			if (flag) {
+				if (m > a[end]) {
+					a[start++] = a[end];
+					flag = false;
 				} else {
-					if (m < a[start]) {
-						a[end--] = a[start];
-						flag = true;
-					} else {
-						start++;
-					}
+					end--;
+				}	
+			} else {
+				if (m < a[start]) {
+					a[end--] = a[start];
+					flag = true;
+				} else {
+					start++;
 				}
 			}
-			a[start] = m;
-			return start;
+		}
+		a[start] = m;
+		return start;
  	 }
 ```
 
 #### 时间复杂度
 
-快速排序最坏情况执行次数：O(n*n)
-快速排序最好情况执行次数：O(nlog(n))
-平均时间复杂度:O(nlog(n))
+> 1. 快速排序最坏情况执行次数：O(n*n)
+> 2. 快速排序最好情况执行次数：O(nlog(n))
+> 3. 平均时间复杂度:O(nlog(n))
 
 
 

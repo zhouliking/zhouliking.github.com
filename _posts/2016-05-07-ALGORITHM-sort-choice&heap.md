@@ -95,8 +95,8 @@ categories: Algorithm
     			 return;
     	  	}
     	  	buildMinHeap(a,n);
-    	  	int temp=a[0]; 
-          a[0]=a[n-1]; a[n-1]=temp; sort2(a,n-1);		
+    	  	int temp=a[0]; a[0]=a[n-1]; a[n-1]=temp; 
+          sort2(a,n-1);		
     	}
 
      //堆排非递归：依次取出，堆顶元素放到最后的位置，并重建堆

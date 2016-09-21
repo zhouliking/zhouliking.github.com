@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "7种常见算法实现与分析（插入&shell排序）"
+title:  "常见排序算法之 - 插入&shell排序"
 date:  2016-05-11
 categories: Algorithm
 ---

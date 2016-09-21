@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "7种常见算法实现与分析（选择排序 & 堆排序）"
+title:  "常见排序算法之-选择排序 & 堆排序"
 date:  2015-08-07
 categories: Algorithm
 ---

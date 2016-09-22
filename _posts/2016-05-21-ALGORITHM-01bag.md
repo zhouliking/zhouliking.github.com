@@ -198,4 +198,63 @@ for 所有的组k
 > 再考虑可以对每组中的物品应用二中“一个简单有效的优化”。这提示我们，对于一个物品组中的物品，所有费用相同的物品只留一个价值最大的，不影响结果。所以，我们可以对主件i的“附件集合”先进行一次01背包，得到费用依次为0..V-c[i]所有这些值时相应的最大价值`f[0..V-c[i]]`。那么这个主件及它的附件集合相当于V-c[i]+1个物品的物品组，其中费用为c[i]+k的物品的价值为`f[k]+w[i]`。也就是说原来指数级的策略中有很多策略都是冗余的，通过一次01背包后，将主件i转化为V-c[i]+1个物品的物品组，就可以直接应用P06的算法解决问题了。
 
 
+### 八、例题及代码
+
+#### 简单0-1背包
+
+- 有钱money元，买n种商品，每件商品只能买一件，或者不买，商品i的花费为：w[i],价值为v[i],求 价值最大的购买方案
+
+```java
+/*
+ * m: totalMoney 总共的钱数
+ * n: 可选，商品种类数
+ * w[i] : 第i件商品重量
+ * v[i] : 第i件商品价值
+ * 
+ * 返回值：f[][n]
+ */
+public static int[][] pack(int m, int n, int w[], int v[]) {	
+	int f[][] = new int[n + 1][m + 1];
+	for (int i = 0; i < n + 1; i++)
+		f[i][0] = 0;
+	for (int j = 0; j < m + 1; j++)
+		f[0][j] = 0;
+	
+	for (int i = 1; i < n + 1; i++) {
+		for (int j = 1; j < m + 1; j++) {			
+			if (w[i - 1] <= j) {
+				if (f[i - 1][j] < (f[i - 1][j - w[i - 1]] + v[i - 1]))
+					f[i][j] = f[i - 1][j - w[i - 1]] + v[i - 1];
+				else
+					f[i][j] = f[i - 1][j];
+			} else
+				f[i][j] = f[i - 1][j];
+		}
+	}
+	return f;
+}
+
+public static void main(String args[]) {
+	
+	Scanner sc = new Scanner(System.in);
+
+	while (sc.hasNext()) {
+		int n = sc.nextInt(); //n件物品
+		int golds = sc.nextInt();//总钱数
+		
+		int v[] = new int[n];
+		int w[] = new int[n];
+		
+		for(int i=0;i<n;i++){
+			v[i] = sc.nextInt(); //第i件商品价值
+			w[i] = sc.nextInt(); //第i件商品价格
+		}
+		int f[][] = pack(golds,n,w,v);
+      
+		
+		System.out.println(f[n][golds]);
+	}
+	sc.close();		
+}
+```
 

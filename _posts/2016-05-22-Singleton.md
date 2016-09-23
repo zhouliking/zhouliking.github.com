@@ -5,7 +5,7 @@ date:  2016-05-22
 categories: DesignPattern
 ---
 
-Singleton的写法、饿汉式、懒汉式
+Singleton的写法、饿汉式、懒汉式、静态块、静态内部类方式等
 
 ---
 

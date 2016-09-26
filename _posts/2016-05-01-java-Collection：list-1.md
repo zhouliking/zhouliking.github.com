@@ -48,6 +48,7 @@ Collection接口：List接口-实现类ArrayList、Vector、LinkedList
 
 ##### ***Iterator迭代器修改时异常***
 
+
 - List与set 中用迭代器遍历时，调用next()都会 checkForComodification()，会引起expectedModCount，modCount不相等，从而抛出异常
 
 - ***解决方案***

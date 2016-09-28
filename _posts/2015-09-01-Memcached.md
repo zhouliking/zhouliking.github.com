@@ -2,7 +2,7 @@
 layout: post
 title:  "Memcached-k-v缓存服务器(小结)"
 date:  2016-03-29
-categories: NetProtocol
+categories: DataBase
 ---
 
 Object String、StringBuilder Integer

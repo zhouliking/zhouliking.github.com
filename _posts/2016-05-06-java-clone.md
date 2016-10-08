@@ -65,6 +65,7 @@ String 为引用变量,而String没有实现cloneable接口
         return super.clone();    //调用 父类Object中的clone()方法
       }
     }
+    
     class Student implements Cloneable{
        //引用变量Person,存在深浅复制问题
       private Pet p;  

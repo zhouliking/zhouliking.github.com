@@ -73,7 +73,9 @@ Singleton的写法、饿汉式、懒汉式、静态块、静态内部类方式�
 			if (singleton == null) {
 				synchronized (Singleton.class) {
 					if (singleton == null) {
+					
 						singleton = new Singleton();
+						
 					}
 				}
 			}

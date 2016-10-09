@@ -142,6 +142,7 @@ Object String、StringBuilder Integer
 
 > 如何让数据永不过期? `expire参数为0`
 
+
 #### 需注意的方法
 
 > 1. ① native Object clone() 拷贝当前对象，若对象中属性是对象，仅拷贝其引用

@@ -5,7 +5,7 @@ date:  2016-03-31
 categories: NetProtocol
 ---
 
-HTTP特点、协议报文、请求方法、状态码
+HTTP特点、协议报文、请求方法、状态码、https
 
 ---
 
@@ -80,7 +80,6 @@ HTTP特点、协议报文、请求方法、状态码
 - 14.WRAPPED 允许客户端发送经过封装的请求。 
 - 15.Extension-mothed 在不改动协议的前提下，可增加另外的方法。 
 
-
 ### HTTP状态码
 
 ##### 状态码简介
@@ -137,6 +136,8 @@ HTTP特点、协议报文、请求方法、状态码
 2. Http1.1：中默认持久连接(可配置为非持久)，一个连接可以传送多个http请求对象
 
 ### HttpS新特性
+
+- 默认端口 443
 
 > HttpS (Hypertext Transfer Protocol over Secure Socket Layer)
 > SSL（Secure Socket Layer，安全套接字层）：运行在TCP/IP层之上、应用层之下，为应用程序提供加密数据通道，它采用了RC4、MD5 以及RSA等加密算法HTTPS实际上就是SSL over HTTP，它使用默认端口443，而不是像HTTP那样使用端口80来和TCP/IP进行通信。HTTPS协议使用SSL在发送方把原始数据进行加密，然 后在接受方进行解密，加密和解密需要发送方和接受方通过交换共知的密钥来实现，因此，所传送的数据不容易被网络黑客截获和解密

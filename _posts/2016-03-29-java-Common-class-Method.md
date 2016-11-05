@@ -25,7 +25,6 @@ Object String、StringBuilder Integer
 
 ```java
 public class Object {
-
     //0.注册本地方法
     private static native void registerNatives();
     static {

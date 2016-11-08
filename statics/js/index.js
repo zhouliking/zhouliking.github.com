@@ -34,7 +34,7 @@ $(document).ready(function(){
    if (typeof $('#markdown-toc').html() === 'undefined') {
         $('.catalog-menu').hide();
     } else {
-        $('.catalog-menu .catalog-menu-content').html($('#markdown-toc').html());
+        $('.catalog-menu.catalog-menu-content').html($('#markdown-toc').html());
     } 
 })();
 

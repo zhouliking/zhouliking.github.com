@@ -106,9 +106,9 @@ categories: JAVA
 > Java多线程实现方式(三种)
 
 ```java
-java.lang.下：
-Thread thread = new Thread();
-thread.start();  线程执行了空的run()方法后，终止了
+	//java.lang.下：
+	Thread thread = new Thread();
+	thread.start();  线程执行了空的run()方法后，终止了
 ```
 
 - ① 继承 Thread，重写run()方法
@@ -225,4 +225,9 @@ run()方法只是普通的方法，启动线程start()为Thread 类中native方�
 > 1. 非静态同步块： synchronized(this){  }
 > 2. 静态同步块： synchronized(类名.class){   }
 
+- Synchronized底层实现
+
+> synchronized的底层实现主要依靠Lock-Free的队列，基本思路是自旋后阻塞，竞争切换后继续竞争锁，稍微牺牲了公平性，但获得了高吞吐量。
+
+![synchronized原理图](/images/sychronized_principle.png)
 

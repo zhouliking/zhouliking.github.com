@@ -585,6 +585,8 @@ run()方法只是普通的方法，启动线程start()为Thread 类中native方�
 
 > 频繁创建线程和销毁线程需要时间, 大大降低系统的效率; 并且线程是计算机中宝贵的资源
 
+#### 关键类
+
 > 关键类： java.uitl.concurrent.ThreadPoolExecutor类是线程池中最核心的一个类
 
 ```java
@@ -602,4 +604,103 @@ run()方法只是普通的方法，启动线程start()为Thread 类中native方�
 > 6. submit()：实际上是调用的execute()方法，可以利用了Future来获取任务结果
 > 7. shutdown()：在终止线程池前，允许执行以前提交的任务
 > 8. shutdownNow()阻止等待任务，并试图停止当前正在执行的任务
+
+#### 线程池处理逻辑
+
+- corePoolSize：核心线程数。设定用setCorePoolSize ()
+- maximumPoolSize：最大线程数。设定用setMaximumPoolSize()
+
+> 1. ① 当前线程池中的线程数目<corePoolSize，则每来一个任务，就会创建一个线程去执行这个任务;
+> 2. ② 当前线程池中的线程数目>=corePoolSize，每来一个任务，会尝试将其添加到任务队列当中，若添加成功，则该任务会等待空闲线程将其取出去执行；若添加失败（一般来说是任务缓存队列已满），则会尝试创建新的线程去执行这个任务；
+> 3. ③ 当前线程池中的线程数目达到maximumPoolSize，则会采取任务拒绝策略进行处理（任务拒绝策略，默认的拒绝策略会抛异常：RejectedExecutionException）
+> 4. ④ 如果线程池中的线程数量大于 corePoolSize时，如果某线程空闲时间超过keepAliveTime，线程将被终止，则任务完成后，最终剩下corePoolSize个
+> 5. ⑤ 也可以为核心池中的线程设置存活时间，那么核心池中的线程空闲时间超过keepAliveTime，线程会被终止。
+
+> 注意：线程初始化：默认，创建线程池之后，线程池中是没有线程的，提交任务后才会创建线程
+
+- 可以使用以下两个方法创建之后立即创建线程：
+
+> 1. ① prestartCoreThread()：初始化一个核心线程
+> 2. ② prestartAllCoreThreads()：初始化所有核心线程
+
+-  任务缓存队列：类型为BlockingQueue<Runnable>可以取下面三种类型
+
+> 1. ① ArrayBlockingQueue：基于数组的先进先出队列，此队列创建时必须指定大小
+> 2. ② LinkedBlockingQueue：基于链表的先进先出队列
+> 3. ③ synchronousQueue：这个队列比较特殊，它不保存提交的任务，而是将直接新建一个线程来执行新来的任务
+
+- 任务拒绝策略（4种）：
+
+> 任务缓存队列已满，并池中的线程数目达到maximumPoolSize，在方法 execute(java.lang.Runnable) 中提交的新任务将被拒绝。execute 方法都将调用其RejectedExecutionHandler.rejectedExecution(,)方法
+
+> 1. ① ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常。
+> 2. ② ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常。
+> 3. ③ ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）
+> 4. ④ ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务
+
+#### ThreadPoolExecutor
+
+用：ThreadPoolExecutor创建线程池
+例：用创建核心线程数5，最大线程数10 的线程池
+
+```java
+	//构造器：
+	ThreadPoolExecutor(int corePoolSize,    //核心线程数
+						int maximumPoolSize,//最大线程数
+						long keepAliveTime, //线程存活时间 
+						TimeUnit unit,      
+						BlockingQueue<Runnable> workQueue) //队列
+	ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 10, 200,TimeUnit.MILLISECONDS, 
+									new ArrayBlockingQueue<Runnable>(5));
+	//执行线程任务：
+	executor.execute(myTask);
+	//关闭线程池：
+	executor.shutdown()
+```
+
+#### Executors工具类
+ 
+> 实际中并不使用ThreadPoolExecutor创建线程池，而是用Executors工具类，的静态方法。
+
+> Java.util.concurrent.Executors工具类: 对ThreadPoolExecutor或ScheduledThreadPoolExecutor使用进行封装。
+
+```java
+    //ScheduledThreadPoolExecutor：
+    ScheduledThreadPoolExecutor extends ThreadPoolExecutor
+                         implements ScheduledExecutorService
+						 
+	//ScheduledExecutorService
+    interface ScheduledExecutorService extends ExecutorService
+```
+
+- 四种线程的使用方法：
+
+- ① Executors.newFixedThreadPool() ：固定大小线程池，以共享的线程队列方式来运行这些线程（只有要请求的过来，就会在一个队列里等待执行）。
+- ② Executors.newCachedThreadPool()：无界线程池，可以进行自动线程回收.如果线程池中有可用，将重用它们。如果现没有可用的，则创建一个新线程并添加到池中。
+- ③ Executors.newSingleThreadExecutor() ：单个后台线程，以共享的线程队列方式来运行这些线程，可保证顺序地执行各个任务，并且在任意给定的时间不会有多个线程是活动的。与其他等效的 newFixedThreadPool(1)
+
+> ExecutorService接口方法 interface ExecutorService extends Executor
+
+> 1. Void shutdown()  关闭执行器
+> 2. List<Runnable> shutdownNow(); 关闭执行器，返回等待的执行任务
+> 3. isShutdown();
+> 4. isTerminated();
+> 5. <T> Future<T> submit(Callable<T> task);
+> 6. <T> Future<T> submit(Runnable task, T result);
+
+
+- ④ Executors.newScheduledThreadPool()：给定的延迟后运行或定期执行的命令
+
+> 1. 返回ScheduledExecutorService接口：继承ExecutorService
+> 2. ScheduledExecutorService新添方法：
+> 3. <V> ScheduledFuture<V> schedule(Callable<V> callable,long delay, TimeUnit unit);
+
+- 置线程池大小设置
+
+> 1. ① 如果是`CPU密集型`任务，就需要尽量压榨CPU，参考值可以设为 NCPU+1
+> 2. ② 如果是`IO密集型`任务，参考值可以设置为2*NCPU
+
+> 只是一个参考值，具体的设置还需要根据实际情况进行调整，比如可以先将线程池大小设置为参考值，再观察任务运行情况和系统负载、资源利用率来进行适当调
+
+
 

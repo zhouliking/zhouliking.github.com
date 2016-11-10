@@ -135,28 +135,30 @@ categories: JAVA
 
 - ③.继承Callable<T>接口，实现 T call()方法、Future实现有返回结果的多线程
 
-> 接收call方法返回值
+> 1. 接收call方法返回值, 有两种方式：
+> 2. ① futureTask用对象
+> 3. ② 使用线程池 submit();
 
-方式一：Future接口的唯一实现类FutureTask（同时也实现了Runable接口）
-1. 将callable对象封装成futureTask对象
- FutureTask<Integer>futureTask = new FutureTask<>(callableObj);
+> 1. 方式一：Future接口的唯一实现类FutureTask（同时也实现了Runable接口）
+> 2. 1.将callable对象封装成futureTask对象
+> 3. FutureTask<Integer>futureTask = new FutureTask<>(callableObj);
 
-2.使用FutureTask对象作为Thread对象创建、并启动新线程
-Thread thread = new Thread(futureTask); 因FutureTask继承了Runable接口
-thread.start();
+> 1. 2.使用FutureTask对象作为Thread对象创建、并启动新线程
+> 2. Thread thread = new Thread(futureTask); 因FutureTask继承了Runable接口
+> 3. thread.start();
 
-3.调用FutureTask对象的方法来获得子线程执行结束后的返回值
-	     futureTask.isDone()  / futureTask.get()
+> 1. 3.调用FutureTask对象的方法来获得子线程执行结束后的返回值
+> 2. futureTask.isDone()  / futureTask.get()
 
-方式二：线程池中使用ExecutorService的submit方法
-<T> Future<T> submit(Callable<T> task)
+> 1. 方式二：线程池中使用ExecutorService的submit方法
+> 2. <T> Future<T> submit(Callable<T> task)
 
-Future接口里定义了如下几个公共方法控制他关联的Callable任务
-cancel(Boolean mayInterruptlfRunning)  返回boolean
-V get()
-V get(long timeout, TimeUnit unit)非阻塞get
-isCancelled()返回 boolean
-isDone() 返回boolean
+> 1. Future接口里定义了如下几个公共方法控制他关联的Callable任务
+> 2. ① cancel(Boolean mayInterruptlfRunning)  返回boolean
+> 3. ② V get()
+> 4. ③ V get(long timeout, TimeUnit unit)非阻塞get
+> 5. ④ isCancelled()返回 boolean
+> 6. ⑤ isDone() 返回boolean
 
 
 - 实现Runnable接口、继承Thread类所具有的优势：
@@ -536,7 +538,68 @@ run()方法只是普通的方法，启动线程start()为Thread 类中native方�
 > 1. ㈠ new Exchanger<>()
 > 2. ㈡ buffer = exchanger.exchange(buffer) 交换两线程buffer中的数据
 
+### 多线程中异常处理
 
+> java.lang.Runnable.run()方法声明(因为此方法声明上没有throw exception部分)进行了约束。当线程抛出异常时，如果没有捕获，该线程就会终止，而对于主线程和其他线程完全不受影响，且完全感知不到某个线程抛出的异常(也是说完全无法catch到这个异常)。在Java中， run方法内进行try catch并处理掉异常。
 
+> 如果线程确实没有自己try catch某个异常，而我们又想在线程代码边界之外（run方法之外）来捕获和处理这个异常。
 
+- Thread类中提供2个方法来设置异常处理器：
+
+#### 异常处理器
+
+> ① 为该线程类的所有线程实例设置默认的异常处理器
+ 
+```java
+   staticsetDefaultUnaughtExceptionHandler( UncaughtExceptionHandler)
+```
+
+> ② 为一个线程实例设置异常处理器：
+
+```java
+    setUncaughtExceptionHandler(Thread.UncaughtExceptionHandler)
+    //例：为某个线程设置异常处理器
+	Thread thread = new Thread(runnable);
+	thread.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
+		@Override
+		public void uncaughtException(Thread th, Throwable e) {
+			th.getName()    出现异常的线程名字
+			e.getMessage()  异常消息
+		}
+	});
+	thread.start();
+```
+
+#### 线程组
+
+> 线程组：Java允许直接对线程组控制，同时控制这批线程，如设置所有的最大优先权，每一个线程都归属于某个线程组管理的一员，如在主函数main()主工作流程中产生一个线程，则产生的线程属于main这个线程组管理的一员。
+
+> 线程组管理类java.lang.ThreadGroup类：实现了 Thread.UncaughtExceptionHandler接口，可以接受组内的异常
+
+```java
+	ThreadGroup  group=new ThreadGroup("group");
+	Thread  thread=new Thread(group, Runnable);
+```
+
+### 线程池
+
+> 频繁创建线程和销毁线程需要时间, 大大降低系统的效率; 并且线程是计算机中宝贵的资源
+
+> 关键类： java.uitl.concurrent.ThreadPoolExecutor类是线程池中最核心的一个类
+
+```java
+   public class ThreadPoolExecutor extends AbstractExecutorService{ 
+   }
+```
+
+- 继承关系：
+
+> 1. Executor是一个顶层接口：只声明了一个方法 void execute(Runnable)
+> 2. ↑ ExecutorService接口：继承了Executor接口，并声明了一些方法：submit、invokeAll、invokeAny以及shutDown等；
+> 3. ↑ AbstractExecutorService抽象类：实现了ExecutorService接口
+> 4. ↑ ThreadPoolExecutor类方法：
+> 5. execute()：向线程池提交一个任务，交由线程池去执行
+> 6. submit()：实际上是调用的execute()方法，可以利用了Future来获取任务结果
+> 7. shutdown()：在终止线程池前，允许执行以前提交的任务
+> 8. shutdownNow()阻止等待任务，并试图停止当前正在执行的任务
 

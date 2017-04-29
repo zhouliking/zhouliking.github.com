@@ -86,7 +86,7 @@ body { font-family: "Microsoft YaHei",arial, sans-serif;font-size: 100%; height:
 
 /*index*/
 #index {width:500px;height:100px;}
-#index div{width:50px;height:100px;background: red;}
+#index div{width:50px;height:100px;background: red;margin-left: 10px;}
 
 
 

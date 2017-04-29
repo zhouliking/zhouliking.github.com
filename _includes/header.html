@@ -1,26 +1,34 @@
-<!--HEADER-->
-<div class="header">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ site.title + page.title }}</title>
+</head>
 
-  <!--  <div class="logo"> <a href="{{ site.baseurl }}/index.html"><img src="{{ site.baseurl }}/images/logo.png" alt=""></a> </div>-->
-    <div class="cssmenu">
-        <ul>
-            <li><a href="{{ site.baseurl }}/index.html">HOME</a></li>       
-            <li><a href="/blog/">BLOG</a></li>
-            <li><a href="https://github.com/zlresource">GitHub</a></li>
-            <li><a href="https://zhouli12.github.io/zlresume/">ABOUT-ME</a></li>
-        </ul>
+<body>
+    <div class="header">
+
+        <div class="cssmenu">
+            <ul>
+                <li><a href="{{ site.baseurl }}/index.html">HOME</a></li>       
+                <li><a href="/blog/">BLOG</a></li>
+                <li><a href="https://github.com/zlresource">GitHub</a></li>
+                <li><a href="https://zhouli12.github.io/zlresume/">ABOUT-ME</a></li>
+            </ul>
+        </div>
+    		
+        <div class="top-nav">
+            <nav class="clearfix">
+               <ul>
+                <li><a href="{{ site.baseurl }}/index.html">HOME</a></li>       
+                <li><a href="/blog/">BLOG</a></li>
+                <li><a href="https://github.com/zlresource">GitHub</a></li>
+                <li><a href="https://zhouli12.github.io/zlresume/">ABOUT-ME</a></li>
+               </ul>
+            <a href="#" id="pull">MENU</a> 
+            </nav>
+        </div>
+    	
     </div>
-		
-    <div class="top-nav">
-        <nav class="clearfix">
-           <ul>
-            <li><a href="{{ site.baseurl }}/index.html">HOME</a></li>       
-            <li><a href="/blog/">BLOG</a></li>
-            <li><a href="https://github.com/zlresource">GitHub</a></li>
-            <li><a href="https://zhouli12.github.io/zlresume/">ABOUT-ME</a></li>
-           </ul>
-        <a href="#" id="pull">MENU</a> 
-        </nav>
-    </div>
-	
-</div>
+</body>
+</html>

@@ -31,12 +31,13 @@ h4 { font-size: 1.2em; color: #104954; margin: 10px 0; }
 h5 { font-size: 1em; color: #222222; margin: 10px 0; }
 
 /*default*/
-body { font-family: "Microsoft YaHei",arial, sans-serif;font-size: 100%; height: 100%; background: #ffffff; color: #555555;
+body { font-family: "Microsoft YaHei",arial, sans-serif;font-size: 100%; height: 100%; background: #ffffff; color: red;
  background: -webkit-linear-gradient(left, #FF8800 10%, #B94FFF 90%);
  background: -moz-linear-gradient(90deg, #FF8800 10%, #B94FFF 90%);
  background: -ms-linear-gradient(90deg, #FF8800 10%, #B94FFF 90%); 
  background: -o-linear-gradient(90deg, #FF8800 10%, #B94FFF 90%);
- background: linear-gradient(90deg, #FF8800 10%, #B94FFF 90%); }
+ background: linear-gradient(90deg, #FF8800 10%, #B94FFF 90%); 
+}
 
 .wrap { margin: 0 auto; height: 100%; width: 80%; }
 @media only screen and (max-width: 1280px) { .wrap { width: 95%; } }

@@ -26,24 +26,24 @@ layout: page
     <div class="catalog-menu-content"></div>
 </div>
 
+
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	var gitment = new Gitment({
+		owner: 'zhouliking,
+		repo: 'https://github.com/zhouliking/zhouliking.github.com',
+		oauth: {
+			client_id: '235c49926b999a071708',
+			client_secret: '388ebb8b00f870db2a618250d09fe592e7d14385',
+		},
+	});
+	gitment.render('gitmentContainer');
+</script>
+
 <div class="comment">
 	<span>Comments2</span>
-	
-	<div id="gitmentContainer"></div>
-	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-	<script>
-		var gitment = new Gitment({
-			owner: 'zhouliking,
-			repo: 'https://github.com/zhouliking/zhouliking.github.com',
-			oauth: {
-				client_id: '235c49926b999a071708',
-				client_secret: '388ebb8b00f870db2a618250d09fe592e7d14385',
-			},
-		});
-		gitment.render('gitmentContainer');
-	</script>
-	   
 	   
 <!--	   
 	   

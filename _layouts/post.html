@@ -28,6 +28,24 @@ layout: page
 
 <div class="comment">
 	<span>Comments</span>
+	
+	<div id="gitmentContainer"></div>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'zhouliking,
+			repo: 'zlresource.github.io{{ page.url }}',
+			oauth: {
+				client_id: '235c49926b999a071708',
+				client_secret: '388ebb8b00f870db2a618250d09fe592e7d14385',
+			},
+		});
+		gitment.render('gitmentContainer');
+	</script>
+	   
+	   
+<!--	   
 	   
 	<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="zlresource.github.io{{ page.url }}"></div>
     
@@ -41,7 +59,7 @@ layout: page
 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
 		})();
 	</script>
-
+-->
 </div>
 
 

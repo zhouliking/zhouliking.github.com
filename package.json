@@ -1,5 +1,5 @@
 {
-  "name": "zlresource.github.io",
+  "name": "zhouliking.github.io",
   "version": "0.0.1",
   "description": "ZHOULI",
   "scripts": {
@@ -7,12 +7,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zlresource"
+    "url": "https://github.com/zhouliking"
   },
-  "author": "zlresource (uestczhouli@163.com.cn)",
+  "author": "zhouliking (uestczhouli@163.com.cn)",
   "license": "MIT",
   "bugs": {
-    "url": "https://zlresource.github.io "
+    "url": "https://zhouliking.github.io "
   },
-  "homepage": "https://zlresource.github.io ",
+  "homepage": "https://zhouliking.github.io ",
 }

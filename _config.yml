@@ -14,6 +14,7 @@ baseurl: ""
 
 
 # Site settings
-name:  zhouli
+name: zhouli
 email: uestczhouli@163.com
+github_name: zhouliking
 github_blog_url: zhouliking.github.io
